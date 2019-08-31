@@ -3,7 +3,7 @@ Project for HackYeah 2019
 
 ## Members
 * Mathias Åsberg - [@Mindgames](https://github.com/Mindgames)
-* Paweł Lubczynski - [@pawel]()
+* Paweł Lubczyński - [@pawel]()
 * Koppány Kondricz - [@kondricz](https://github.com/kondricz)
 * Bence Szegvári - [@bencesz](https://github.com/bencesz)
 
