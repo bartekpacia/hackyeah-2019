@@ -27,42 +27,42 @@ export class ProgressComponent {
 
   progressArray = [
     {
-      title: 'abc',
+      title: 'short description',
       icon: 'meh-rolling-eyes',
       status: 'done',
     },
     {
-      title: 'abc',
+      title: 'short description',
       icon: 'meh-rolling-eyes',
       status: 'active'
     },
     {
-      title: 'abc',
+      title: 'short description',
       icon: 'meh-rolling-eyes',
       status: 'inactive'
     },
     {
-      title: 'abc',
+      title: 'short description',
       icon: 'smile-beam',
       status: 'inactive'
     },
     {
-      title: 'abc',
+      title: 'short description',
       icon: 'smile-beam',
       status: 'inactive'
     },
     {
-      title: 'abc',
+      title: 'short description',
       icon: 'laugh',
       status: 'inactive'
     },
     {
-      title: 'abc',
+      title: 'short description',
       icon: 'grin-hearts',
       status: 'inactive'
     },
     {
-      title: 'abc',
+      title: 'short description',
       icon: 'grin-hearts',
       status: 'inactive'
     }
