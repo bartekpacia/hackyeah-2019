@@ -1,60 +1,70 @@
 <div class="container">
+    <app-card>
+        <div class="card-body">
+            <h1 class="level">
+                <fa-icon
+                    icon="trophy"
+                    class="icon"></fa-icon>
+                Level 25
+            </h1>
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="card-footer-item">
+                <h4>Level:</h4>
+                <strong>25</strong>
+            </div>
+            <div class="card-footer-item">
+                <h4>Trophies:</h4>
+                <strong>12</strong>
+            </div>
+            <div class="card-footer-item">
+                <h4>Ranking:</h4>
+                <strong>#10</strong>
+            </div>
+        </div>
+    </app-card>
     <main
         role="main"
         class="main"
         *ngIf="user">
-        <section class="dashboard-user">
-            <h2>
-                {{user.firstName}} {{user.middleName}} {{user.surName}} ({{user.userName}})
-            </h2>
-        </section>
-
         <section class="dashboard-selector">
-            <button
-                (click)="navigateTo(RoutingAppPages.Qr)"
-                type="button"
-                class="button button-dashboard button-dashboard-add">
+            <app-dashboard-button [pathTo]="RoutingAppPages.Qr">
                 <fa-icon
                     class="icon"
                     icon="plus"></fa-icon>
                 Add a ticket
-            </button>
-            <button
-                type="button"
-                class="button button-dashboard">
+            </app-dashboard-button>
+            <app-dashboard-button [pathTo]="RoutingAppPages.Dashboard">
                 <fa-icon
                     class="icon"
-                    icon="route">
-                </fa-icon>
+                    icon="route"></fa-icon>
                 Your trip
-            </button>
-            <button
-                type="button"
-                class="button button-dashboard"
-                (click)="navigateTo(RoutingAppPages.Quiz)">
+            </app-dashboard-button>
+            <app-dashboard-button [pathTo]="RoutingAppPages.Quiz">
                 <fa-icon
                     class="icon"
-                    icon="question-circle">
-                </fa-icon>
+                    icon="question-circle"></fa-icon>
                 Quiz
-            </button>
-            <button
-                type="button"
-                class="button button-dashboard">
-                <span class="icon icon-important">{{user.pkpoints || 0}}</span>
-                PKPoints
-            </button>
-            <button
-                (click)="navigateTo(RoutingAppPages.Progress)"
-                type="button"
-                class="button button-dashboard">
-                <fa-icon
-                    class="icon"
-                    icon="question-circle">
-                </fa-icon>
-                Progress
-            </button>
+            </app-dashboard-button>
+            <app-dashboard-button [pathTo]="RoutingAppPages.Dashboard">
+                <span>
+                    <span class="icon icon-important">{{user.pkpoints || 0}}</span>
+                    PKPoints
+                </span>
+            </app-dashboard-button>
+            <app-dashboard-button [pathTo]="RoutingAppPages.Progress">
+                <span>
+                    <fa-icon
+                        class="icon"
+                        icon="question-circle">
+                    </fa-icon>
+                    Progress
+                </span>
+            </app-dashboard-button>
+
         </section>
     </main>
 </div>
-<app-backdrop backgroundImage="assets/images/ic-1200x740.jpeg"></app-backdrop>

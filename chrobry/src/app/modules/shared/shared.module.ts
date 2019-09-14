@@ -19,6 +19,7 @@ import { CurrencyIconComponent } from './components/currency-icon/currency-icon.
 import { UserService } from '@app/modules/shared/services/user.service';
 import { RouterModule } from '@angular/router';
 import { BackdropComponent } from './components/backdrop/backdrop.component';
+import { CardComponent } from './components/card/card.component';
 
 const declarations: Array<any> = [
   FooterComponent,
@@ -28,6 +29,7 @@ const declarations: Array<any> = [
   SnackbarComponent,
   CurrencyIconComponent,
   BackdropComponent,
+  CardComponent,
 ];
 
 @NgModule({
