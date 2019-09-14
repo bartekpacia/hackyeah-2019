@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
 
-  build-staging:
+  build-frontend:
     docker:
       - image: circleci/node:latest
     steps:
@@ -9,9 +9,6 @@ jobs:
       - run:
           name: Update NPM
           command: "sudo npm install -g npm@latest ng firebase-tools"
-      - run:
-          name: Get local dependencies for backend MAZURY
-          command: "cd mazury && npm install"
       - run:
           name: Get local dependencies for frontend CHROBRY
           command: "cd chrobry && npm install"
@@ -23,7 +20,33 @@ jobs:
           command: cd chrobry && firebase deploy --token "$FIREBASE_TOKEN"
       - slack/notify:
           color: '#80d1ce'
-          message: ":flying_saucer: :flying_saucer"
+          message: ":flying_saucer: :flying_saucer: Roses are red, violats are blue circleCI ate my shoe"
+          webhook: '${SLACK_WEBHOOK}'
+
+  build-backend:
+    docker:
+      - image: google/cloud-sdk:latest
+    steps:
+      - checkout
+      - run:
+          name: Update NPM
+          command: "sudo npm install -g npm@latest"
+      - run:
+          name: Get local dependencies for frontend MAZURY
+          command: "cd mazury && npm install"
+      - run:
+          name: Configure gcloud
+          command: |
+              echo "Deploying to Google Cloud...
+              gcloud auth activate-service-account --key-file ./mazury/gaecreds.json
+              gcloud --quiet config set project hackyeah-2019
+              gcloud --quiet config set compute/zone europe-west3
+      - run:
+          name: Deploy backend application
+          command: cd mazury && gcloud beta app deploy"
+      - slack/notify:
+          color: '#80d1ce'
+          message: ":flying_saucer: :flying_saucer: Roses are red, violats are blue !false is true"
           webhook: '${SLACK_WEBHOOK}'
 
 orbs:
