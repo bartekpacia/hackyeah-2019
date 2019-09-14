@@ -1,0 +1,24 @@
+<div class="ranking">
+  <ul
+    class="ranking-list"
+    [@listAnimation]="progressArray.length">
+    <li class="ranking-list-item" *ngFor="let item of progressArray; let first = first; index as i">
+      <div class="ranking-badge">
+          <span>
+            <img
+              class="ranking-list-item-icon"
+              alt="KP"
+              [src]="'/assets/images/avatars/'+ item.icon +'.png'">
+          </span>
+
+      </div>
+      <div class="ranking-description">{{item.title}}</div>
+      <div class="ranking-point">
+        <div>
+          <p class="ranking-point-number">546554 pts</p>
+          <p class="ranking-point-level">Level 11</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
