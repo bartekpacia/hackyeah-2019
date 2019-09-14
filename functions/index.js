@@ -15,8 +15,21 @@ exports.refresh = functions.https.onRequest(async (request, response) => {
   const newCount = count + 1;
   await docRef.set({ count: newCount });
 
+  // Begin actual business logic
+  const factsQuery = await db.collection("interesting-facts").get();
+  const facts = factsQuery.docs;
+
+  const randomFact = facts[Math.floor(Math.random() * facts.length)];
+
+  const fact = randomFact.data();
+
   response.send(
-    `Hello from Firebase to HackYeah 2019! dummy question number: ${newCount}`
+    `<h1>dummy question number: ${newCount}.</h1> 
+    <h1>Random question: ${fact.question.en}</h1>
+    <p>${fact.answer1.en}</p>
+    <p>${fact.answer2.en}</p>
+    <p>${fact.answer3.en}</p>
+    <p>${fact.answer4.en}</p>`
   );
 });
 
