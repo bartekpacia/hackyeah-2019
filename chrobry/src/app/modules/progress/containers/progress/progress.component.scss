@@ -1,8 +1,8 @@
 $line-size: 3rem;
 
 p {
-  margin: 0.2rem 0;
-  color: var(--color-primary)
+    margin: 0.2rem 0;
+    color: var(--color-primary);
 }
 
 ul {
@@ -14,14 +14,33 @@ li {
     margin: 1rem 0;
 }
 
+.stepList--wrapper {
+  padding: 0 1rem;
+}
+
 .stepList--wrapper li {
     list-style: none;
     display: flex;
     justify-content: left;
 }
 
+.stepList--description, .stepList--point {
+  border-bottom: 1px grey dashed;
+}
+
+.stepList--description {
+    width: 40%;
+}
+
+.stepList--point {
+    font-size: 2rem;
+    color: var(--color-primary);
+    width: 40%;
+    text-align: right;
+}
+
 .badge {
-    margin: 0 2rem;
+    margin: 0 1rem 0 0;
     width: $line-size;
     height: $line-size;
     border-radius: $line-size;
@@ -49,4 +68,3 @@ li {
 .current {
     color: var(--color-info);
 }
-
