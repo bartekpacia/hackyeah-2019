@@ -30,9 +30,9 @@ jobs:
       - checkout
       - gcp-cli/install
       - gcp-cli/initialize:
-          gcloud-service-key: ${GOOGLE_AUTH}
-          google-compute-zone: europe-west3
-          google-project-id: hackyeah-2019
+          gcloud-service-key: $GOOGLE_AUTH
+          google-compute-zone: $GOOGLE_COMPUTE_ZONE
+          google-project-id: $GOOGLE_PROJECT_ID
       - run:
           name: Get local dependencies for frontend MAZURY
           command: "cd mazury && npm install"
