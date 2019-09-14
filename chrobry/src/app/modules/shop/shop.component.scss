@@ -15,7 +15,7 @@ p {
 .container--footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 
   &-box {
     margin: 1rem 0;

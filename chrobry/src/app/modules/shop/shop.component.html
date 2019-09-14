@@ -4,14 +4,17 @@
     label="Shop">
     <div class="card-footer"></div>
   </app-card>
-  <img
-    class="image--icon"
-    alt="dupa"
-    src="/assets/images/wars_logo.png">
   <main
     role="main"
     class="main">
-    <div class="container--footer" [@listAnimation]>
+    <img
+      class="image--icon"
+      alt="dupa"
+      src="/assets/images/wars_logo.png">
+
+    <div
+      class="container--footer"
+      [@listAnimation]>
       <div
         *ngFor="let item of itemList"
         class="container--footer-item">
