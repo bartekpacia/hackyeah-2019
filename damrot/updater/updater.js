@@ -14,6 +14,7 @@ const db = admin.firestore();
 const cronExp = "*/10 * * * * *"; // Every 10 seconds
 
 console.log("updater is running...");
+update();
 
 cron.schedule(cronExp, update);
 

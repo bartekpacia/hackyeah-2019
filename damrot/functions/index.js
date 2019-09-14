@@ -3,11 +3,9 @@ const admin = require("firebase-admin");
 admin.initializeApp();
 const db = admin.firestore();
 
-const docRef = db.collection("dummyQuestions").doc("dummyQuestionCount");
-
 exports.refresh = functions.https.onRequest(async (request, response) => {
   // Here the actual business logic begins
-  const factsQuery = await db.collection("interesting-facts").get();
+  const factsQuery = await db.collection("QUESTIONS").get();
   const facts = factsQuery.docs;
 
   const randomFact = facts[Math.floor(Math.random() * facts.length)]; // Pick a random fact
@@ -24,20 +22,3 @@ exports.refresh = functions.https.onRequest(async (request, response) => {
 
   response.json(fact);
 });
-
-// Currently unused
-// pub/sub can't run more often than every 1 minute
-exports.questionGenerator = functions.pubsub
-  .schedule("every 5 minutes")
-  .onRun(async context => {
-    console.log("questionGenerator run...");
-    const countDocument = await docRef.get();
-    const count = countDocument.data().count;
-
-    console.log(`count: ${count}`);
-
-    const newCount = count + 1;
-    await docRef.set({ count: newCount });
-
-    return null;
-  });
