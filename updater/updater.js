@@ -20,7 +20,7 @@ cron.schedule(cronExp, update);
 // Just ping a Cloud Function so it'll update the question
 async function update() {
   const res = await request.get(
-    "https://us-central1-hackyeah-2019.cloudfunctions.net/https"
+    "https://us-central1-hackyeah-2019.cloudfunctions.net/refresh"
   );
 
   console.log("run");
