@@ -47,6 +47,25 @@ jobs:
           message: ":flying_saucer: :flying_saucer: Roses are red, violats are blue !false is true"
           webhook: '${SLACK_WEBHOOK}'
 
+  build-functions:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: Update NPM
+          command: "sudo npm install -g npm@latest firebase-tools"
+      - run:
+          name: Package application
+          command: "cd damrot/functions && npm install"
+      - run:
+          name: Deploy backend application
+          command: 'cd damrot/functions && firebase deploy --only functions --token "$FIREBASE_TOKEN"'
+      - slack/notify:
+          color: '#80d1ce'
+          message: ":flying_saucer: :flying_saucer: Roses are red, violats are blue GCP functions are new"
+          webhook: '${SLACK_WEBHOOK}'
+
 orbs:
   slack: circleci/slack@3.3.0
   gcp-cli: circleci/gcp-cli@1.8.2
@@ -60,6 +79,10 @@ workflows:
           branches:
             only: dev
     - build-backend:
+        filters:
+          branches:
+            only: dev
+    - build-functions:
         filters:
           branches:
             only: dev
