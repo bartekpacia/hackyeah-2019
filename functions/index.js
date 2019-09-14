@@ -1,41 +1,32 @@
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 admin.initializeApp();
-
 const db = admin.firestore();
+
 const docRef = db.collection("dummyQuestions").doc("dummyQuestionCount");
 
-// Dummy function to check whether it works
 exports.refresh = functions.https.onRequest(async (request, response) => {
-  const countDocument = await docRef.get();
-  const count = countDocument.data().count;
-
-  console.log(`count: ${count}`);
-
-  const newCount = count + 1;
-  await docRef.set({ count: newCount });
-
-  // Begin actual business logic
+  // Here the actual business logic begins
   const factsQuery = await db.collection("interesting-facts").get();
   const facts = factsQuery.docs;
 
-  const randomFact = facts[Math.floor(Math.random() * facts.length)];
-
+  const randomFact = facts[Math.floor(Math.random() * facts.length)]; // Pick a random fact
   const fact = randomFact.data();
 
   response.send(
-    `<h1>dummy question number: ${newCount}.</h1> 
-    <h1>Random question: ${fact.question.en}</h1>
+    `<h1>${fact.question.en}</h1>
     <p>${fact.answer1.en}</p>
     <p>${fact.answer2.en}</p>
     <p>${fact.answer3.en}</p>
-    <p>${fact.answer4.en}</p>`
+    <p>${fact.answer4.en}</p>
+    <p></p>`
   );
 });
 
-// Can't run more often than every 1 minute
+// Currently unused
+// pub/sub can't run more often than every 1 minute
 exports.questionGenerator = functions.pubsub
-  .schedule("every 1 minutes")
+  .schedule("every 5 minutes")
   .onRun(async context => {
     console.log("questionGenerator run...");
     const countDocument = await docRef.get();
