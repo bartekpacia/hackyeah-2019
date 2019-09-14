@@ -1,0 +1,47 @@
+@import '../../../../../styles/abstracts/variables';
+
+$step-size: 30px;
+
+.counter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+
+  &-step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $step-size;
+    height: $step-size;
+    font-size: $step-size - 10;
+    border-radius: 50%;
+    background: var(--color-info);
+    color: var(--color-secondary);
+    transition: all 1s ease;
+
+    &.current,
+    &.finished {
+      background: var(--color-secondary);
+      color: var(--color-brand);
+    }
+  }
+
+  &-progress {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    background: var(--color-info);
+
+    &-bar {
+      display: block;
+      width: 0;
+      background: var(--color-secondary);
+      height: 2px;
+      transition: all 1s ease;
+    }
+  }
+}

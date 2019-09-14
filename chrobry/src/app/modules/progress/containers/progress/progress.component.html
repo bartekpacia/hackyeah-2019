@@ -1,0 +1,26 @@
+<div class="stepList--box">
+    <ul
+        class="stepList--wrapper"
+        [@listAnimation]="progressArray.length">
+        <li *ngFor="let item of progressArray; let first = first; index as i">
+            <div
+                class="badge"
+                [ngClass]="{'active': item.status==='active', 'inactive': item.status==='inactive'}">
+                <span>
+                    <fa-icon
+                        class="icon"
+                        [icon]="item.icon">
+                    </fa-icon>
+                </span>
+                <div
+                    *ngIf="!first"
+                    class="badge--vl"></div>
+            </div>
+                <div class="stepList--description">
+                    <p>{{i+1}}. Level</p>
+                    {{item.title}}
+                </div>
+                <div class="stepList--point">abc</div>
+        </li>
+    </ul>
+</div>

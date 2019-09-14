@@ -1,0 +1,39 @@
+<form
+    [formGroup]="form"
+    (ngSubmit)="submit()"
+    novalidate
+    autocomplete="off">
+    <div class="container">
+        <main
+            role="main"
+            class="main">
+            <section class="add-margin">
+                <app-input
+                    class="pin-input"
+                    [type]="InputType.Text"
+                    controlName="tripNo"
+                    placeholder="Type Manual Trip Number"
+                    [parentForm]="form">
+                </app-input>
+            </section>
+            <section class="add-margin">
+                <button
+                    (click)="navigate(RoutingQrCodePages.QrRader)"
+                    type="button"
+                    class="button button-dashboard">
+                    <fa-icon
+                        class="icon"
+                        icon="qrcode"></fa-icon>
+                    Add via QR CODE
+                </button>
+            </section>
+            <section class="add-margin">
+                <button
+                    class="button button-primary"
+                    type="submit"
+                    disabled>
+                </button>
+            </section>
+        </main>
+    </div>
+</form>

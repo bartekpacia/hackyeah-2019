@@ -1,0 +1,325 @@
+{
+  "categories": [
+    {
+      "id": "100",
+      "label": {
+        "en": "Miscellaneous",
+        "pl": "Różne"
+      },
+      "successRate": 0,
+      "questions": [
+        "1000",
+        "1001"
+      ]
+    },
+    {
+      "id": "101",
+      "label": {
+        "en": "Trains",
+        "pl": "Pociągi"
+      },
+      "successRate": 0,
+      "questions": [
+        "1010",
+        "1011"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "1010",
+      "categoryId": "101",
+      "label": {
+        "en": "What is the highest speed a train ever achieved?",
+        "pl": "Jaka jest najwyższa prędkość, jaką kiedykolwiek osiągnął pociąg?"
+      },
+      "successRate": 0,
+      "point": 150,
+      "answers": [
+        {
+          "id": "10101",
+          "label": {
+            "en": "500 km/h"
+          }
+        },
+        {
+          "id": "10102",
+          "label": {
+            "en": "375 km/h"
+          }
+        },
+        {
+          "id": "10103",
+          "label": {
+            "en": "431 km/h"
+          }
+        },
+        {
+          "id": "10104",
+          "label": {
+            "en": "293 km/h"
+          }
+        }
+      ]
+    },
+    {
+      "id": "1011",
+      "categoryId": "101",
+      "label": {
+        "en": "What is the name of the fastest train?",
+        "pl": "Jak nazywa się najszybszy pociąg?"
+      },
+      "successRate": 0,
+      "point": 150,
+      "answers": [
+        {
+          "id": "10111",
+          "label": {
+            "en": "DeutscheBahn ICE"
+          }
+        },
+        {
+          "id": "10112",
+          "label": {
+            "en": "Shinkansen H5"
+          }
+        },
+        {
+          "id": "10113",
+          "label": {
+            "en": "Haramain Western Railway"
+          }
+        },
+        {
+          "id": "10114",
+          "label": {
+            "en": "Shanghai Maglev"
+          }
+        }
+      ]
+    },
+    {
+      "id": "1000",
+      "categoryId": "100",
+      "label": {
+        "en": "Best Star Wars Movie?"
+      },
+      "successRate": 0,
+      "point": 150,
+      "answers": [
+        {
+          "id": "10001",
+          "label": {
+            "en": "IV. A New Hope"
+          }
+        },
+        {
+          "id": "10002",
+          "label": {
+            "en": "I. The Phantom Menace"
+          }
+        },
+        {
+          "id": "10003",
+          "label": {
+            "en": "V. The Empire Strikes Back"
+          }
+        },
+        {
+          "id": "10004",
+          "label": {
+            "en": "II. The Clone Wars"
+          }
+        }
+      ]
+    },
+    {
+      "id": "1001",
+      "categoryId": "100",
+      "label": {
+        "en": "Best Star Wars Movie?"
+      },
+      "successRate": 0,
+      "point": 150,
+      "answers": [
+        {
+          "id": "10011",
+          "label": {
+            "en": "IV. A New Hope"
+          }
+        },
+        {
+          "id": "10012",
+          "label": {
+            "en": "I. The Phantom Menace"
+          }
+        },
+        {
+          "id": "10013",
+          "label": {
+            "en": "V. The Empire Strikes Back"
+          }
+        },
+        {
+          "id": "10014",
+          "label": {
+            "en": "II. The Clone Wars"
+          }
+        }
+      ]
+    }
+  ],
+  "answers": [
+    {
+      "id": "1010",
+      "answerId": "10103",
+      "label": {
+        "en": "431 km/h"
+      },
+      "imgUrl": "https://www.chinadiscovery.com/assets/images/shanghai/transport/shanghai-maglev-train.jpg",
+      "linkUrl": "https://www.cntraveler.com/stories/2016-05-18/the-10-fastest-trains-in-the-world",
+      "text": {
+        "en": "<p>The world’s fastest train isn’t the newest, the shiniest, or even the one with the most expensive tickets. Charging $8 per person, per ride, the Maglev runs the nearly 19 miles from Shanghai’s Pudong International Airport to the Longyang metro station on the outskirts of Shanghai. That’s right, the train, which takes just over 7 minutes to complete the journey using magnetic levitation (maglev) technology, doesn’t go to the city center. As such, the bulk of the passengers since its 2004 debut have been travelers on their way to and from the airport, cameras out and ready to snap a photo of the speed indicators when the train hits 431 km/hr (267 mph).</p>"
+      }
+    },
+    {
+      "id": "1011",
+      "answerId": "10114",
+      "label": {
+        "en": "Shanghai Maglev"
+      },
+      "imgUrl": "https://media.cntraveler.com/photos/573c78f7a4dfc1c77e7f1764/16:9/w_720,c_limit/e320_cr_Siemens.jpg",
+      "linkUrl": "https://www.cntraveler.com/stories/2016-05-18/the-10-fastest-trains-in-the-world",
+      "text": {
+        "en": "<p>The world’s fastest train isn’t the newest, the shiniest, or even the one with the most expensive tickets. Charging $8 per person, per ride, the Maglev runs the nearly 19 miles from Shanghai’s Pudong International Airport to the Longyang metro station on the outskirts of Shanghai. That’s right, the train, which takes just over 7 minutes to complete the journey using magnetic levitation (maglev) technology, doesn’t go to the city center. As such, the bulk of the passengers since its 2004 debut have been travelers on their way to and from the airport, cameras out and ready to snap a photo of the speed indicators when the train hits 431 km/hr (267 mph).</p>"
+      }
+    },
+    {
+      "id": "1000",
+      "answerId": "10003",
+      "label": {
+        "en": "V. The Empire Strikes Back"
+      },
+      "imgUrl": "https://cdn.mos.cms.futurecdn.net/sgQUU6si9oqQzR63ePMssa-320-80.jpg",
+      "linkUrl": "https://www.gamesradar.com/star-wars-movies-order-first-chronological/",
+      "text": {
+        "en": "<p>There are currently 10 live-action Star Wars movies in existence, and, for anyone new to the franchise, deciding what order to watch those movies in can be a daunting task. Do you watch them in release order, starting with Episode 4: A New Hope? Or do you follow simply watch them numerically, starting with Episode 1: The Phantom Menace? And then what about those \"Star Wars Story\" spin-offs? Well, look no further, as we delve into seven options to watch the iconic sci-fi franchise.</p>"
+      }
+    },
+    {
+      "id": "1001",
+      "answerId": "10013",
+      "label": {
+        "en": "V. The Empire Strikes Back"
+      },
+      "imgUrl": "https://cdn.mos.cms.futurecdn.net/sgQUU6si9oqQzR63ePMssa-320-80.jpg",
+      "linkUrl": "https://www.gamesradar.com/star-wars-movies-order-first-chronological/",
+      "text": {
+        "en": "<p>There are currently 10 live-action Star Wars movies in existence, and, for anyone new to the franchise, deciding what order to watch those movies in can be a daunting task. Do you watch them in release order, starting with Episode 4: A New Hope? Or do you follow simply watch them numerically, starting with Episode 1: The Phantom Menace? And then what about those \"Star Wars Story\" spin-offs? Well, look no further, as we delve into seven options to watch the iconic sci-fi franchise.</p>"
+      }
+    }
+  ],
+  "scores": {
+    "highScores": [
+      {
+        "id": "100",
+        "userName": "Kako86",
+        "score": 3500
+      }
+    ],
+    "highStreaks": [
+      {
+        "id": "100",
+        "userName": "Kako86",
+        "score": 10
+      }
+    ]
+  },
+  "login": [
+    {
+      "id": "kako86@gmail.com"
+    }
+  ],
+  "users": [
+    {
+      "id": "kako86@gmail.com",
+      "lang": "pl",
+      "firstName": "Katarzyna",
+      "middleName": "",
+      "surName": "Kowalska",
+      "userName": "Kako86",
+      "email": "kako86@gmail.com",
+      "pkpoints": 1455,
+      "highScores": [
+        {
+          "id": "100",
+          "score": 3500
+        }
+      ],
+      "highStreaks": [
+        {
+          "id": "100",
+          "score": 10
+        }
+      ]
+    }
+  ],
+  "tickets": [
+    {
+      "id": "58624277",
+      "ticketType": "NORMAL",
+      "ticketPrice": {
+        "PLN": 168
+      },
+      "ticketPurchaseTime": "2019-09-10T13:45:23Z",
+      "ticketPurchaseNo": "eIC17858017",
+      "arrivalTo": "Poznań Gł.",
+      "arrivalTime": "2019-09-14T16:47:00Z",
+      "departureFrom": "Warszawa Centr.",
+      "departureTime": "2019-09-14T10:07:00Z",
+      "distanceKm": 302,
+      "distanceMi": 188,
+      "category": "EIC",
+      "trainNo": "1802/1803",
+      "wagonClass": "1",
+      "wagonNo": "14",
+      "wagonLayout": "WITHOUT_COMPARTMENTS",
+      "seatNo": "65",
+      "seatType": "SITTING",
+      "seatPosition": "WINDOW"
+    }
+  ],
+  "trains": [
+    {
+      "id": "1802/1803",
+      "categoryType": "EIC",
+      "trainType": "EP09",
+      "trainName": "Chrobry",
+      "trainImg": "https://www.vagonweb.cz/popisy/img/PKPIC/EP09-IC-a.gif",
+      "wagons": [
+        {
+          "id": "14",
+          "wagonType": "B9mnopuz",
+          "wagonVariant": "158A",
+          "wagonLayout": "WITHOUT_COMPARTMENTS",
+          "wagonClass": "1",
+          "wagonImg": "https://www.vagonweb.cz/popisy/img/PKPIC/Amnopuz-158A-a.gif",
+          "wagonInfo": {
+            "en": "Runs on ⑤, ⑥, ⑦ until 29.I.2017, from 03.II.2017 on ⑤, ⑥ and 26.XII.2016; 17.IV.2017",
+            "pl": "Kursuje w ⑤, ⑥, ⑦ do 29.I.2017 a od 03.II.2017 w ⑤, ⑥ oraz 26.XII.2016; 17.IV.2017"
+          },
+          "wagonSeats": 54,
+          "wagonFeatures": {
+            "airConditioning": true,
+            "disabled": false,
+            "230v": true,
+            "toilet": true,
+            "bar": false,
+            "restaurant": false,
+            "restaurantSeats": 0
+          }
+        }
+      ]
+    }
+  ]
+}

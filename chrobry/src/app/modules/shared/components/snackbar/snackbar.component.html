@@ -1,0 +1,6 @@
+<section class="snackbar-outlet">
+  <div class="snackbar snackbar-{{snackbar.type}}" *ngFor="let snackbar of (snackbars$ | async)" role="alert">
+    <p>{{snackbar.message}}</p>
+    <button type="button" class="button button-close" (click)="closeSnackbar(snackbar)">&times;</button>
+  </div>
+</section>

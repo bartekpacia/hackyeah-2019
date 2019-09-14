@@ -1,0 +1,98 @@
+@import '../../../../../styles/abstracts/mixins';
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  border-bottom: solid 3px var(--color-primary);
+
+  &-title {
+    margin: 0;
+  }
+
+  &-logo {
+    display: block;
+    background-image: url(../../../../../assets/images/sprite-sprites-2x.png?v=1.3);
+    background-size: cover;
+    background-position-y: 235px;
+    height: 22px;
+    width: 180px;
+    text-indent: -1000px;
+    overflow: hidden;
+    margin-left: 20px;
+
+    @include breakpoint($tablet) {
+      background-position-y: -632px;
+      height: 30px;
+      width: 240px;
+    }
+  }
+
+  &-score {
+    margin: 0 auto;
+  }
+
+  &-navigation {
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &-menu-button {
+    position: relative;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 70px;
+    z-index: 109;
+
+    &::before,
+    &::after {
+      content: '';
+    }
+
+    &::before,
+    & span {
+      margin-bottom: 5px;
+    }
+
+    &::before,
+    &::after,
+    & span {
+      position: relative;
+      display: block;
+      height: 5px;
+      border-radius: 0;
+      background: var(--color-secondary);
+      width: 30px;
+      transition: all 0.5s ease;
+    }
+
+    &.show {
+      &::before,
+      &::after,
+      span {
+        background: var(--color-brand);
+      }
+
+      &::before {
+        transform: rotateZ(45deg);
+        top: 10px;
+      }
+
+      &::after {
+        transform: rotateZ(-45deg);
+        top: -10px;
+      }
+
+      span {
+        width: 0;
+      }
+    }
+  }
+}
+

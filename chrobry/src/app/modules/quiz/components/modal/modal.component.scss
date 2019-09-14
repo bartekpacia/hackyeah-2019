@@ -1,0 +1,88 @@
+@import '../../../../../styles/abstracts/mixins';
+
+@keyframes modal-open {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.modal {
+  &-overlay {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    overflow: auto;
+    background: var(--modal-overlay);
+
+    @include breakpoint($mobile) {
+      justify-content: flex-start;
+    }
+
+    &.show {
+      z-index: 1000;
+
+      .modal-dialog {
+        @include breakpoint($mobile) {
+          overflow-x: hidden;
+        }
+      }
+    }
+
+    &.closeable {
+      cursor: crosshair;
+    }
+  }
+
+  &-dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--modal-bg);
+    color: var(--modal-color);
+    max-width: 900px;
+  }
+}
+
+:host {
+  ::ng-deep {
+    .modal {
+      &-header,
+      &-footer {
+        text-align: center;
+        padding: 20px;
+      }
+
+      &-header {
+        border-bottom: solid 1px var(--color-black-low-opacity);
+      }
+
+      &-body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-footer {
+        display: flex;
+        justify-content: space-between;
+        border-top: solid 1px var(--color-black-low-opacity);
+      }
+
+      &-title {
+        text-align: center;
+        margin: 0 5px;
+        font-size: 20px;
+
+        @include breakpoint($mobile) {
+          margin: 0;
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}

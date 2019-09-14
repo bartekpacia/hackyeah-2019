@@ -1,0 +1,8 @@
+<div class="container">
+  <main [@fadeInOut]="loaded ? 'in' : 'out'" role="main" class="main">
+    <h1 class="summary-title">Thank you for playing!</h1>
+    <app-score></app-score>
+    <button type="button" class="button button-primary" (click)="newGame()">New Game</button>
+  </main>
+</div>
+<app-backdrop backgroundImage="assets/images/ic-1200x740.jpeg"></app-backdrop>
