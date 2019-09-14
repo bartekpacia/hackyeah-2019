@@ -3,7 +3,7 @@
     class="ranking-list"
     [@listAnimation]
   >
-    <li class="ranking-list-item" *ngFor="let item of regions[region]; let first = first; index as i">
+    <li class="ranking-list-item" *ngFor="let item of regionsList; let first = first; index as i">
       <ng-container [ngSwitch]="i">
         <span *ngSwitchCase="0" class="ranking-position first">
           <fa-icon icon="medal"></fa-icon>
