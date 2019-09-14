@@ -8,6 +8,7 @@ export enum RoutingAppPages {
   Quiz = 'quiz',
   Qr = 'qr',
   Progress = 'progress',
+  Shop = 'shop'
 }
 
 export enum RoutingQuizPages {
@@ -26,5 +27,9 @@ export enum RoutingProgressPages {
 }
 
 export enum RoutingTicketsPages {
+  Home = '',
+}
+
+export enum RoutingShopPages {
   Home = '',
 }

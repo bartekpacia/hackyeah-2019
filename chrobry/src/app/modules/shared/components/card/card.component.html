@@ -1,5 +1,17 @@
-<aside class="card" role="presentation">
+<aside
+  class="card"
+  role="presentation">
   <div class="card-content">
+    <div class="card-body">
+      <h1 class="card-title">
+        <fa-icon
+          [icon]="icon"
+          class="icon"></fa-icon>
+        <span class="card-title-description">
+          <span class="card-title-label">{{label}}</span>
+        </span>
+      </h1>
+    </div>
     <ng-content></ng-content>
   </div>
 </aside>
