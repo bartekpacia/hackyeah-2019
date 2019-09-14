@@ -28,16 +28,13 @@ jobs:
       - image: google/cloud-sdk:latest
     steps:
       - checkout
+      - gcp-cli/install_and_initialize_cli:
+          gcloud-service-key: ${GOOGLE_AUTH}
+          google-compute-zone: europe-west3
+          google-project-id: hackyeah-2019
       - run:
           name: Get local dependencies for frontend MAZURY
           command: "cd mazury && npm install"
-      - run:
-          name: Configure gcloud
-          command: |
-              echo "Deploying to Google Cloud...
-              gcloud auth activate-service-account --key-file ./mazury/gaecreds.json
-              gcloud --quiet config set project hackyeah-2019
-              gcloud --quiet config set compute/zone europe-west3
       - run:
           name: Deploy backend application
           command: cd mazury && gcloud beta app deploy"
@@ -48,6 +45,7 @@ jobs:
 
 orbs:
   slack: circleci/slack@3.3.0
+  gcp-cli: circleci/gcp-cli@1.8.2
 
 workflows:
   version: 2
