@@ -1,26 +1,31 @@
-<div class="stepList--box">
-  <div class="stepList--header">
-    LeaderBear
-  </div>
-  <ul
-    class="stepList--wrapper"
-    [@listAnimation]="progressArray.length">
-    <li *ngFor="let item of progressArray; let first = first; index as i">
-      <div class="badge">
-        <span>
-          <img
-            alt="smth"
-            [src]="'/assets/images/avatars/'+ item.icon +'.png'">
+<div class="container">
+  <app-card>
+    <div class="card-body">
+      <h1 class="card-title">
+        <fa-icon
+          icon="crown"
+          class="icon"></fa-icon>
+        <span class="card-title-description">
+          <span class="card-title-label">Ranking</span>
         </span>
-
+      </h1>
+    </div>
+    <div class="card-footer">
+      <div class="card-footer-item">
+        Poland
+        <span class="card-footer-item-result">#123</span>
       </div>
-      <div class="stepList--description">{{item.title}}</div>
-      <div class="stepList--point">
-        <div>
-          <p>546554 pts</p>
-          <p class="stepList--point-level">Level 11</p>
-        </div>
+      <div class="card-footer-item">
+        Mazowieckie
+        <span class="card-footer-item-result">#54</span>
       </div>
-    </li>
-  </ul>
+      <div class="card-footer-item">
+        Warsaw
+        <span class="card-footer-item-result">#12</span>
+      </div>
+    </div>
+  </app-card>
+  <main role="main" class="main">
+    <app-ranking></app-ranking>
+  </main>
 </div>

@@ -1,13 +1,13 @@
 <div class="container" *ngIf="user">
     <app-card>
         <div class="card-body">
-            <h1 class="level">
+            <h1 class="card-title">
                 <fa-icon
                     icon="trophy"
                     class="icon"></fa-icon>
-              <span class="level-description">
-                <span class="level-title">Train conductor</span>
-                <span class="level-number">Level 25</span>
+              <span class="card-title-description">
+                <span class="card-title-label">Train conductor</span>
+                <span class="card-title-number">Level 25</span>
               </span>
             </h1>
             <div class="progress">
@@ -51,7 +51,7 @@
             <app-dashboard-button [pathTo]="RoutingAppPages.Progress">
               <fa-icon
                 class="icon"
-                icon="list-ol">
+                icon="crown">
               </fa-icon>
               Ranking
             </app-dashboard-button>

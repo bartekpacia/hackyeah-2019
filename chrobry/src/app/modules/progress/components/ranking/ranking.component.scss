@@ -1,0 +1,81 @@
+$line-size: 4rem;
+
+.ranking {
+  &-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 50px;
+    background: var(--color-secondary);
+    color: var(--color-secondary-contrast);
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 5px;
+    font-family: var(--font-family-light);
+    font-weight: 400;
+
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+  }
+
+  &-list {
+    padding: 0;
+    list-style-type: none;
+
+    &-item {
+      margin: 1rem 0;
+      padding: 1rem;
+      box-shadow: 0 3px 10px 0 #ccc;
+      list-style: none;
+      display: flex;
+      justify-content: left;
+
+      &-icon {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &-description {
+    font-weight: 600;
+    line-height: $line-size;
+    vertical-align: middle;
+    flex: 1;
+  }
+
+  &-point {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    &-level {
+      color: grey;
+      font-size: 0.8rem;
+    }
+  }
+  &-badge {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 1rem 0 0;
+    width: $line-size;
+    height: $line-size;
+    border-radius: $line-size;
+    border: 1px solid grey;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    text-align: center;
+  }
+}
+
+

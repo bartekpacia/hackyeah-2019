@@ -8,6 +8,13 @@
   padding: 0;
   background: var(--color-brand);
 
+
+  &.subpage {
+    .header-logo {
+      margin-left: 0;
+    }
+  }
+
   &-title {
     margin: 0;
   }
@@ -18,7 +25,7 @@
 
     img {
       display: block;
-      height: 30px;
+      height: 25px;
     }
   }
 
