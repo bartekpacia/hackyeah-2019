@@ -25,7 +25,7 @@ jobs:
 
   build-backend:
     docker:
-      - image: google/cloud-sdk:latest
+      - image: circleci/node:latest
     steps:
       - checkout
       - gcp-cli/install
