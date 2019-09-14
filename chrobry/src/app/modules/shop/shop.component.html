@@ -1,20 +1,26 @@
 <div class="container">
-  <app-card icon="shopping-basket" label="Shop">
-    <div class="card-footer">
-      <div class="card-footer-item">
-        Poland
-        <span class="card-footer-item-result">#123</span>
-      </div>
-      <div class="card-footer-item">
-        Mazowieckie
-        <span class="card-footer-item-result">#54</span>
-      </div>
-      <div class="card-footer-item">
-        Warsaw
-        <span class="card-footer-item-result">#12</span>
+  <app-card
+    icon="shopping-basket"
+    label="Shop">
+    <div class="card-footer"></div>
+  </app-card>
+  <img
+    class="image--icon"
+    alt="dupa"
+    src="/assets/images/wars_logo.png">
+  <main
+    role="main"
+    class="main">
+    <div class="container--footer">
+      <div
+        *ngFor="let item of itemList"
+        class="container--footer-item">
+        <img
+          class="image--icon"
+          [src]="'/assets/images/'+ item.image +'.png'">
+        <p>{{item.label}}</p>
+        <p class="font--bolded">{{item.points}}pkt</p>
       </div>
     </div>
-  </app-card>
-  <main role="main" class="main">
   </main>
 </div>
