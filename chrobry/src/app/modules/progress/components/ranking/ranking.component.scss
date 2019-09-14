@@ -21,11 +21,38 @@ $line-size: 4rem;
     }
   }
 
+  &-position {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -8px;
+    left: -8px;
+    width: 30px;
+    height: 30px;
+    background: var(--color-secondary);
+    color: var(--color-secondary-contrast);
+    border-radius: 50%;
+
+    &.first {
+      background: gold;
+    }
+
+    &.second {
+      background: silver;
+    }
+
+    &.third {
+      background: rosybrown;
+    }
+  }
+
   &-list {
     padding: 0;
     list-style-type: none;
 
     &-item {
+      position: relative;
       margin: 1rem 0;
       padding: 1rem;
       box-shadow: 0 3px 10px 0 #ccc;

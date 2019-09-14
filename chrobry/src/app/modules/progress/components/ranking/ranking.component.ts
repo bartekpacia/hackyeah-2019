@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { listAnimation } from '@app/animations/list.animation';
 
 @Component({
@@ -9,39 +9,79 @@ import { listAnimation } from '@app/animations/list.animation';
   animations: [listAnimation],
 })
 export class RankingComponent {
+  @Input() region: string;
 
-  progressArray = [
-    {
-      title: 'Name Surname',
-      icon: 'avatar_men',
-    },
-    {
-      title: 'Name Surname',
-      icon: 'avatar_men',
-    },
-    {
-      title: 'Name Surname',
-      icon: 'avatar_men',
-    },
-    {
-      title: 'Name Surname',
-      icon: 'avatar_men2',
-    },
-    {
-      title: 'Name Surname',
-      icon: 'avatar_men2',
-    },
-    {
-      title: 'Name Surname',
-      icon: 'avatar_women',
-    },
-    {
-      title: 'Name Surname',
-      icon: 'avatar_women2',
-    },
-    {
-      title: 'Name Surname',
-      icon: 'avatar_women2',
-    }
-  ];
+  regions = {
+    poland: [
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men2',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men2',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_women',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_women2',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_women2',
+      }
+    ],
+    mazowieckie: [
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men2',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men2',
+      },
+    ],
+    warsaw: [
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men',
+      },
+      {
+        title: 'Name Surname',
+        icon: 'avatar_men',
+      },
+    ]
+  };
+
 }
