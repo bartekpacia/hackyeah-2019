@@ -1,0 +1,65 @@
+version: 2.1
+jobs:
+
+  build-frontend:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: Update NPM
+          command: "sudo npm install -g npm@latest ng firebase-tools"
+      - run:
+          name: Get local dependencies for frontend CHROBRY
+          command: "cd chrobry && npm install"
+      - run:
+          name: Build frontend application
+          command: "cd chrobry && npm run build"
+      - run:
+          name: Deploy frontend application to firebase hosting
+          command: cd chrobry && firebase deploy --token "$FIREBASE_TOKEN"
+      - slack/notify:
+          color: '#80d1ce'
+          message: ":flying_saucer: :flying_saucer: Roses are red, violats are blue circleCI ate my shoe"
+          webhook: '${SLACK_WEBHOOK}'
+
+  build-backend:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - gcp-cli/install
+      - gcp-cli/initialize:
+          gcloud-service-key: GOOGLE_AUTH
+          google-compute-zone: GOOGLE_COMPUTE_ZONE
+          google-project-id: GOOGLE_PROJECT_ID
+      - run:
+          name: Get local dependencies for frontend MAZURY
+          command: "cd mazury && npm install"
+      - run:
+          name: Package application
+          command: "cd mazury && npm run compile"
+      - run:
+          name: Deploy backend application
+          command: "cd mazury && gcloud beta app deploy --quiet"
+      - slack/notify:
+          color: '#80d1ce'
+          message: ":flying_saucer: :flying_saucer: Roses are red, violats are blue !false is true"
+          webhook: '${SLACK_WEBHOOK}'
+
+orbs:
+  slack: circleci/slack@3.3.0
+  gcp-cli: circleci/gcp-cli@1.8.2
+
+workflows:
+  version: 2
+  update-staging:
+    jobs: 
+    - build-frontend:
+        filters:
+          branches:
+            only: dev
+    - build-backend:
+        filters:
+          branches:
+            only: dev

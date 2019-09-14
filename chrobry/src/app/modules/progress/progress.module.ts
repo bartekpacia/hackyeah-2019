@@ -9,7 +9,6 @@ import { ProgressRoutingModule } from './progress-routing.module';
 import { ProgressComponent } from './containers/progress/progress.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 
-
 @NgModule({
   declarations: [
     ProgressComponent,
