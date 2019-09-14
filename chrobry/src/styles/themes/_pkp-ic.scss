@@ -1,0 +1,35 @@
+:root {
+  // PKP Intercity theme
+  --color-brand: rgb(0, 113, 188);
+  --color-primary: rgb(245, 130, 32);
+  --color-primary-contrast: rgb(255, 255, 255);
+  --color-secondary: rgb(0, 113, 188);
+  --color-secondary-contrast: rgb(255, 255, 255);
+  --color-tertiary: rgb(255, 255, 255);
+  --color-tertiary-contrast: rgba(0, 113, 188);
+  --color-error: rgb(230, 80, 0);
+  --color-warning: rgb(245, 130, 32);
+  --color-info: rgba(77, 156, 208);
+  --color-success: rgba(50, 200, 50);
+  --color-text: rgb(30, 30, 30);
+  --color-text-contrast: rgb(250, 250, 250);
+  --color-white-low-opacity: rgba(255, 255, 255, 0.3);
+  --color-white-high-opacity: rgba(255, 255, 255, 0.9);
+  --color-black-low-opacity: rgba(0, 113, 188, 0.3);
+  --color-black-high-opacity: rgba(0, 113, 188, 0.9);
+  --color-bg: rgba(255, 255, 255);
+
+  --font-family: MyriadPro-Regular, Arial, sans-serif;
+  --font-family-light: MyriadPro-Light, Arial, sans-serif;
+  --font-family-bold: MyriadPro-Bold, Arial, sans-serif;
+
+  --modal-bg: rgb(255, 255, 255);
+  --modal-color: rgba(30, 30, 30);
+  --modal-overlay: var(--color-black-high-opacity);
+  --menu-bg: rgb(255, 255, 255);
+  --menu-color: rgba(30, 30, 30);
+
+  --input-border: rgba(77, 156, 208);
+  --input-bg: rgb(255, 255, 255);
+  --input-color: rgba(30, 30, 30);
+}

@@ -27,21 +27,7 @@
           z-index: 1;
         }
 
-        &::after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          background-image: url(../../../../../assets/images/wagon.jpg);
-          background-blend-mode: overlay;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-color: #ccc;
-          opacity: 0.15;
-        }
+        @include backdrop('/assets/images/ic-1200x740.jpeg');
       }
 
       &-footer {
