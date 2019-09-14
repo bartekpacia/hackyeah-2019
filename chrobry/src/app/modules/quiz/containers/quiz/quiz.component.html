@@ -1,0 +1,11 @@
+<div class="container">
+  <main role="main" class="main">
+    <app-question [category]="selectedCategory" *ngIf="selectedCategory$ | async as selectedCategory; else selectCategory"></app-question>
+    <ng-template #selectCategory>
+      <app-category></app-category>
+    </ng-template>
+  </main>
+</div>
+<app-backdrop backgroundImage="assets/images/ic-1200x740.jpeg"></app-backdrop>
+
+<app-modal></app-modal>

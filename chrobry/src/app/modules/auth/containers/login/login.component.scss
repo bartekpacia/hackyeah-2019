@@ -1,0 +1,39 @@
+@import 'abstracts/mixins';
+
+:host{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@include backdrop('../../../../../assets/images/ic-1200x740.jpeg');
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.logo {
+    display: block;
+    background-image: url(../../../../../assets/images/sprite-sprites-2x.png?v=1.3);
+    background-size: cover;
+    background-position-y: 392px;
+    height: 37px;
+    width: 300px;
+    text-indent: -1000px;
+    overflow: hidden;
+
+    @include breakpoint($tablet) {
+      background-position-y: -632px;
+      height: 30px;
+      width: 240px;
+    }
+  }
