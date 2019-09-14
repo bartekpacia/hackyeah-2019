@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProgressRoutingModule } from './progress-routing.module';
 import { ProgressComponent } from './containers/progress/progress.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -11,7 +12,8 @@ import { ProgressComponent } from './containers/progress/progress.component';
   ],
   imports: [
     CommonModule,
-    ProgressRoutingModule
+    ProgressRoutingModule,
+    FontAwesomeModule
   ]
 })
 export class ProgressModule { }
