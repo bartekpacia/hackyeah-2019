@@ -1,0 +1,14 @@
+<header class="header" role="group">
+  <button type="button" class="button button-tertiary" *ngIf="isSubPage$ | async" (click)="goBack()">
+    <fa-icon icon="arrow-left"></fa-icon>
+    <span class="sr-only">Back</span>
+  </button>
+  <a class="header-logo" href="" target="_blank" rel="nofollow">PKP Intercity</a>
+  <nav class="header-navigation" role="navigation">
+    <button type="button" class="button header-menu-button" [class.show]="showMenu$ | async" (click)="toggleMenu()">
+      <span><i class="sr-only">Menu</i></span>
+    </button>
+  </nav>
+</header>
+
+<app-menu></app-menu>

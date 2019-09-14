@@ -1,0 +1,51 @@
+@import '../../../../../styles/abstracts/mixins';
+
+.menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  padding: 20px;
+  opacity: 0;
+  background: var(--menu-bg);
+  color: var(--menu-color);
+  transition: all 0.2s ease-in;
+  z-index: -1;
+
+  &.show {
+    left: 0;
+    opacity: 1;
+    z-index: 11;
+
+    @include breakpoint($desktop) {
+      left: 30%;
+    }
+  }
+
+  nav {
+    flex-direction: column;
+
+    ul {
+      list-style: none;
+      margin: 0 0 15px 0;
+      padding: 0;
+
+      li:not(:last-of-type) {
+        border-bottom: solid 1px var(--color-black-low-opacity);
+      }
+    }
+
+    .button {
+      width: 100%;
+      padding: 20px;
+
+      &-tertiary {
+        text-align: left;
+        color: var(--color-primary);
+      }
+    }
+  }
+}

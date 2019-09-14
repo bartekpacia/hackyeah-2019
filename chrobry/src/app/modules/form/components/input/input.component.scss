@@ -1,0 +1,27 @@
+@import 'abstracts/variables';
+
+.form-control {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 60px;
+  border: solid 1px var(--input-border);
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    border: none;
+    background: var(--input-bg);
+    color: var(--input-color);
+    line-height: 1;
+    font-size: 25px;
+    padding: 0 15px;
+    letter-spacing: 1px;
+  }
+}
