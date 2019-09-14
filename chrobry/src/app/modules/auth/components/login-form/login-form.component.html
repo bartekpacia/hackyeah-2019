@@ -1,6 +1,0 @@
-<form [formGroup]="form" (ngSubmit)="submit()" novalidate autocomplete="off">
-  <h3 class="title">Demo: kako86@gmail.com</h3>
-  <app-input class="pin-input" [type]="InputType.Text" controlName="username" placeholder="E-mail" [parentForm]="form"></app-input>
-  <app-input class="pin-input" [type]="InputType.Password" controlName="password" placeholder="Password" [parentForm]="form"></app-input>
-  <button type="submit" class="button button-primary" [disabled]="form.invalid">Log in</button>
-</form>
