@@ -1,4 +1,4 @@
-@import '../../../../../styles/abstracts/variables';
+@import 'abstracts/variables';
 
 $step-size: 30px;
 
@@ -18,14 +18,14 @@ $step-size: 30px;
     height: $step-size;
     font-size: $step-size - 10;
     border-radius: 50%;
-    background: var(--color-info);
-    color: var(--color-secondary);
+    background: var(--color-tertiary);
+    color: var(--color-tertiary-contrast);
     transition: all 1s ease;
 
     &.current,
     &.finished {
       background: var(--color-secondary);
-      color: var(--color-brand);
+      color: var(--color-secondary-contrast);
     }
   }
 

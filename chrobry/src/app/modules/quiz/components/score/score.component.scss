@@ -8,7 +8,7 @@ $score-size: 100px;
   height: $score-size;
   width: $score-size * 3;
   background: var(--color-secondary);
-  color: var(--color-primary);
+  color: var(--color-secondary-contrast);
   border-radius: $score-size / 2;
 
   &-text {

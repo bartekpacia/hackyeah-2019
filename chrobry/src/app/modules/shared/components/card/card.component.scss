@@ -44,6 +44,7 @@
           justify-content: center;
           width: 100%;
           padding: 20px;
+          font-size: 1.2rem;
 
           &:not(:last-of-type)::after {
             content: '';
@@ -52,6 +53,15 @@
             position: absolute;
             right: 0;
             border-right: solid 1px #ccc;
+          }
+
+          &-result {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            font-size: 1.4rem;
+            font-family: var(--font-family-bold);
+            font-weight: 700;
           }
         }
       }

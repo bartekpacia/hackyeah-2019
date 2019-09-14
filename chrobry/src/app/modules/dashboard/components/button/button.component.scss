@@ -20,6 +20,7 @@ $button-size: 48%;
   border-radius: 5px;
   border: none;
   overflow: hidden;
+  box-shadow: 0 2px 5px #ccc;
 
   @include backdrop('/assets/images/ic-1200x740.jpeg');
 
