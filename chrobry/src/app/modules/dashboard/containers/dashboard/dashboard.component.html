@@ -24,7 +24,8 @@
                 class="button button-dashboard">
                 <fa-icon
                     class="icon"
-                    icon="route"></fa-icon>
+                    icon="route">
+                </fa-icon>
                 Your trip
             </button>
             <button
@@ -33,7 +34,8 @@
                 (click)="navigateTo(RoutingAppPages.Quiz)">
                 <fa-icon
                     class="icon"
-                    icon="question-circle"></fa-icon>
+                    icon="question-circle">
+                </fa-icon>
                 Quiz
             </button>
             <button
@@ -46,7 +48,10 @@
                 (click)="navigateTo(RoutingAppPages.Progress)"
                 type="button"
                 class="button button-dashboard">
-                <span class="icon icon-important">{{user.pkpoints || 0}}</span>
+                <fa-icon
+                    class="icon"
+                    icon="question-circle">
+                </fa-icon>
                 Progress
             </button>
         </section>

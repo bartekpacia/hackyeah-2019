@@ -33,9 +33,13 @@ const routes: Routes = [
       },
       {
         path: RoutingAppPages.Qr,
-        // canLoad: [AuthGuard],
         loadChildren: () => import(`@app/modules/qr/qr.module`)
           .then(module => module.QrModule),
+      },
+      {
+        path: RoutingAppPages.Progress,
+        loadChildren: () => import(`@app/modules/progress/progress.module`)
+          .then(module => module.ProgressModule),
       },
     ],
   }
