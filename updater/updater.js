@@ -17,6 +17,11 @@ console.log("updater is running...");
 
 cron.schedule(cronExp, update);
 
-function update() {
+// Just ping a Cloud Function so it'll update the question
+async function update() {
+  const res = await request.get(
+    "https://us-central1-hackyeah-2019.cloudfunctions.net/https"
+  );
+
   console.log("run");
 }

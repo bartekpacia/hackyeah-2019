@@ -10,7 +10,11 @@
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "firebase-functions-test": "^0.1.6"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

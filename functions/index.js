@@ -3,13 +3,22 @@ const admin = require("firebase-admin");
 admin.initializeApp();
 
 const db = admin.firestore();
+const docRef = db.collection("dummyQuestions").doc("dummyQuestionCount");
 
 // Dummy function to check whether it works
-exports.https = functions.https.onRequest((request, response) => {
-  response.send("Hello from Firebase to HackYeah 2019!");
-});
+exports.refresh = functions.https.onRequest(async (request, response) => {
+  const countDocument = await docRef.get();
+  const count = countDocument.data().count;
 
-const docRef = db.collection("dummyQuestions").doc("dummyQuestionCount");
+  console.log(`count: ${count}`);
+
+  const newCount = count + 1;
+  await docRef.set({ count: newCount });
+
+  response.send(
+    `Hello from Firebase to HackYeah 2019! dummy question number: ${newCount}`
+  );
+});
 
 // Can't run more often than every 1 minute
 exports.questionGenerator = functions.pubsub
