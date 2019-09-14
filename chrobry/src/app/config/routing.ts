@@ -7,6 +7,7 @@ export enum RoutingAppPages {
   Dashboard = 'dashboard',
   Quiz = 'quiz',
   Qr = 'qr',
+  Progress = 'progress',
 }
 
 export enum RoutingQuizPages {
@@ -15,6 +16,11 @@ export enum RoutingQuizPages {
 }
 
 export enum RoutingQrCodePages {
+  Home = '',
+  QrRader = 'qrreader'
+}
+
+export enum RoutingProgressPages {
   Home = '',
   QrRader = 'qrreader'
 }

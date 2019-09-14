@@ -1,4 +1,4 @@
-@import 'abstracts/mixins';
+@import 'abstracts/variables';
 
 :host {
   flex-grow: 1;
@@ -13,28 +13,26 @@
   }
 }
 
-.button-dashboard {
+.level {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 48%;
-  height: 100px;
-  border: solid 1px var(--color-text);
-  background: var(--color-white-low-opacity);
-  margin-bottom: 15px;
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 3rem;
 
-  &-add {
-    border-style: dashed;
-    background: transparent;
+  &-description {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-shadow: 0 0 10px #fff;
   }
 
-  .icon {
-    font-size: 3rem;
-    margin-bottom: 8px;
+  &-title {
+    font-size: 2rem;
+    margin-bottom: 4px;
+  }
 
-    &-important {
-      color: var(--color-primary);
-    }
+  &-number {
+    font-size: 1rem;
   }
 }

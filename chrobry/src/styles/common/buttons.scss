@@ -16,6 +16,10 @@
   outline: none !important;
   text-decoration: none !important;
 
+  & * {
+    position: relative;
+  }
+
   &:focus,
   &:active {
     box-shadow: var(--color-primary) 0 0 0 2px !important;
@@ -29,12 +33,17 @@
 
   &-primary {
     background: var(--color-primary);
-    color: var(--color-text);
+    color: var(--color-primary-contrast);
   }
 
   &-secondary {
-    background: var(--color-brand);
-    color: var(--color-secondary);
+    background: var(--color-secondary);
+    color: var(--color-secondary-contrast);
+  }
+
+  &-tertiary {
+    background: var(--color-tertiary);
+    color: var(--color-tertiary-contrast);
   }
 
   &-close {
@@ -58,8 +67,8 @@
     margin-bottom: 15px;
     padding-left: $button-selector-height;
     border-radius: $button-selector-height / 2;
-    color: var(--color-text);
-    background: var(--color-info);
+    background: var(--color-secondary);
+    color: var(--color-secondary-contrast);
 
     @include breakpoint($tablet) {
       margin-bottom: 40px;
@@ -85,7 +94,7 @@
       width: $button-selector-height;
       height: $button-selector-height;
       border: solid 1px transparent;
-      background: var(--color-black-low-opacity);
+      background: rgba(0, 0, 0, .2);
       border-radius: 50%;
       top: -1px;
       left: -1px;

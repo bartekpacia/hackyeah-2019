@@ -1,7 +1,7 @@
 @import '../../../../../styles/abstracts/variables';
 
 $loader-size: 70px;
-$loader-color: var(--color-secondary);
+$loader-color: var(--color-tertiary);
 $loader-border-width: 0;
 $loader-animation: 1s linear infinite;
 
@@ -36,6 +36,7 @@ $loader-animation: 1s linear infinite;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--color-tertiary);
 
   &-overlay {
     position: fixed;
