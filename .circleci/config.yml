@@ -1,0 +1,41 @@
+version: 2.1
+jobs:
+
+  build-staging:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - aws-cli/setup
+      - run:
+          name: Update NPM
+          command: "sudo npm install -g npm@latest ng firebase-tools"
+      - run:
+          name: Get local dependencies for backend MAZURY
+          command: "cd mazury && npm install"
+      - run:
+          name: Get local dependencies for frontend CHROBRY
+          command: "cd chrobry && npm install"
+      - run:
+          name: Build frontend application
+          command: "cd chrobry && npm run build"
+      - run:
+          name: Deploy frontend application to firebase
+          command: cd chrobry && firebase deploy --token "$FIREBASE_TOKEN"
+      - slack/notify:
+          color: '#80d1ce'
+          message: ":flying_saucer: :flying_saucer"
+          webhook: '${SLACK_WEBHOOK}'
+
+orbs:
+  slack: circleci/slack@3.3.0
+  gcp-cli: circleci/gcp-cli@1.8.2
+
+workflows:
+  version: 2
+  update-staging:
+    jobs: 
+    - build-staging:
+        filters:
+          branches:
+            only: dev
