@@ -4,11 +4,9 @@ import { ProgressRoutingModule } from './progress-routing.module';
 import { ProgressComponent } from './containers/progress/progress.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-
-
 @NgModule({
   declarations: [
-    ProgressComponent
+    ProgressComponent,
   ],
   imports: [
     CommonModule,

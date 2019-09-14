@@ -7,7 +7,7 @@
   ],
   "rules": {
     "interface-over-type-literal": false,
-    "no-unnecessary-type-assertion":false,
+    "no-unnecessary-type-assertion": false,
     "template-use-track-by-function": false,
     "template-i18n": [
       false,
@@ -43,7 +43,10 @@
     ],
     "component-selector": [
       true,
-      "element",
+      [
+        "element",
+        "attribute"
+      ],
       "app",
       "kebab-case"
     ],
