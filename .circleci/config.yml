@@ -37,8 +37,11 @@ jobs:
           name: Get local dependencies for frontend MAZURY
           command: "cd mazury && npm install"
       - run:
+          name: Package application
+          command: cd mazury && npm run compile"
+      - run:
           name: Deploy backend application
-          command: cd mazury && gcloud beta app deploy --quiet"
+          command: cd mazury && gcloud app deploy --quiet"
       - slack/notify:
           color: '#80d1ce'
           message: ":flying_saucer: :flying_saucer: Roses are red, violats are blue !false is true"

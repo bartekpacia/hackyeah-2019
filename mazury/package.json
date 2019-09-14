@@ -23,7 +23,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev --no-notify src/",
-    "start": "npm run compile && node lib/",
+    "start": "node lib/",
     "compile": "shx rm -rf lib/ && tsc"
   },
   "dependencies": {
