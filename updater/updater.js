@@ -9,4 +9,14 @@ admin.initializeApp({
   credential: admin.credential.cert(credentials)
 });
 
-console.log("works");
+const db = admin.firestore();
+
+const cronExp = "*/10 * * * * *"; // Every 10 seconds
+
+console.log("updater is running...");
+
+cron.schedule(cronExp, update);
+
+function update() {
+  console.log("run");
+}
