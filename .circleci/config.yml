@@ -20,7 +20,7 @@ jobs:
           name: Build frontend application
           command: "cd chrobry && npm run build"
       - run:
-          name: Deploy frontend application to firebase
+          name: Deploy frontend application to firebase hosting
           command: cd chrobry && firebase deploy --token "$FIREBASE_TOKEN"
       - slack/notify:
           color: '#80d1ce'
