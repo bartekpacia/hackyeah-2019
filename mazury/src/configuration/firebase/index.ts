@@ -3,7 +3,7 @@ const CREDENTIALS = require('./credentials.json');
 
 
 admin.initializeApp({
-  credential: CREDENTIALS,
+  credential: admin.credential.cert(CREDENTIALS),
   databaseURL: "https://hackyeah-2019.firebaseio.com"
 });
 
