@@ -1,16 +1,29 @@
 <div class="ranking">
   <ul
     class="ranking-list"
-    [@listAnimation]="progressArray.length">
-    <li class="ranking-list-item" *ngFor="let item of progressArray; let first = first; index as i">
+    [@listAnimation]="region">
+    <li class="ranking-list-item" *ngFor="let item of regions[region]; let first = first; index as i">
+      <ng-container [ngSwitch]="i">
+        <span *ngSwitchCase="0" class="ranking-position first">
+          <fa-icon icon="medal"></fa-icon>
+        </span>
+        <span *ngSwitchCase="1" class="ranking-position second">
+          <fa-icon icon="medal"></fa-icon>
+        </span>
+        <span *ngSwitchCase="2" class="ranking-position third">
+          <fa-icon icon="medal"></fa-icon>
+        </span>
+        <span *ngSwitchDefault class="ranking-position">
+          {{i + 1}}
+        </span>
+      </ng-container>
       <div class="ranking-badge">
-          <span>
-            <img
-              class="ranking-list-item-icon"
-              alt="KP"
-              [src]="'/assets/images/avatars/'+ item.icon +'.png'">
-          </span>
-
+        <span>
+          <img
+            class="ranking-list-item-icon"
+            alt="KP"
+            [src]="'/assets/images/avatars/'+ item.icon +'.png'">
+        </span>
       </div>
       <div class="ranking-description">{{item.title}}</div>
       <div class="ranking-point">

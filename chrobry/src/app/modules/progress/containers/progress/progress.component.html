@@ -16,6 +16,11 @@
     </div>
   </app-card>
   <main role="main" class="main">
-    <app-ranking></app-ranking>
+    <app-button-group>
+      <button type="button" class="button" [class.active]="region === 'poland'" (click)="selectRegion('poland')">Poland</button>
+      <button type="button" class="button" [class.active]="region === 'mazowieckie'" (click)="selectRegion('mazowieckie')">Mazowieckie</button>
+      <button type="button" class="button" [class.active]="region === 'warsaw'" (click)="selectRegion('warsaw')">Warsaw</button>
+    </app-button-group>
+    <app-ranking [region]="region"></app-ranking>
   </main>
 </div>

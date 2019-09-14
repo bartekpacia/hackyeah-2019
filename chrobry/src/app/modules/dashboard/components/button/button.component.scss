@@ -22,6 +22,11 @@ $button-size: 48%;
   overflow: hidden;
   box-shadow: 0 2px 5px #ccc;
 
+  &:hover,
+  &:active {
+    transform: scale(1.05);
+  }
+
   @include backdrop('/assets/images/ic-1200x740.jpeg');
 
   ::ng-deep {

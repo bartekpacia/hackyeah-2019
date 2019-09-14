@@ -6,4 +6,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./progress.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProgressComponent { }
+export class ProgressComponent {
+  region = 'poland';
+
+  selectRegion(region: string): void {
+    this.region = region;
+  }
+}
