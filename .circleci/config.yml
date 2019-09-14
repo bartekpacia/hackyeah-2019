@@ -56,7 +56,11 @@ workflows:
   version: 2
   update-staging:
     jobs: 
-    - build-staging:
+    - build-frontend:
+        filters:
+          branches:
+            only: dev
+    - build-backend:
         filters:
           branches:
             only: dev
