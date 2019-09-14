@@ -27,44 +27,36 @@ export class ProgressComponent {
 
   progressArray = [
     {
-      title: 'short description',
-      icon: 'meh-rolling-eyes',
-      status: 'done',
+      title: 'Name Surname',
+      icon: 'avatar_men',
     },
     {
-      title: 'short description',
-      icon: 'meh-rolling-eyes',
-      status: 'active'
+      title: 'Name Surname',
+      icon: 'avatar_men',
     },
     {
-      title: 'short description',
-      icon: 'meh-rolling-eyes',
-      status: 'inactive'
+      title: 'Name Surname',
+      icon: 'avatar_men',
     },
     {
-      title: 'short description',
-      icon: 'smile-beam',
-      status: 'inactive'
+      title: 'Name Surname',
+      icon: 'avatar_men2',
     },
     {
-      title: 'short description',
-      icon: 'smile-beam',
-      status: 'inactive'
+      title: 'Name Surname',
+      icon: 'avatar_men2',
     },
     {
-      title: 'short description',
-      icon: 'laugh',
-      status: 'inactive'
+      title: 'Name Surname',
+      icon: 'avatar_women',
     },
     {
-      title: 'short description',
-      icon: 'grin-hearts',
-      status: 'inactive'
+      title: 'Name Surname',
+      icon: 'avatar_women2',
     },
     {
-      title: 'short description',
-      icon: 'grin-hearts',
-      status: 'inactive'
+      title: 'Name Surname',
+      icon: 'avatar_women2',
     }
   ];
 

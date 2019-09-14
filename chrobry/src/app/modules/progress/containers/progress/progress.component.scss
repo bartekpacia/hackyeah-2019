@@ -1,8 +1,15 @@
-$line-size: 3rem;
+$line-size: 4rem;
+
+.stepList--box{
+padding: 0 1rem;
+}
+
+.stepList--header{
+  margin: 1rem 0;
+}
 
 p {
     margin: 0.2rem 0;
-    color: var(--color-primary);
 }
 
 ul {
@@ -12,11 +19,22 @@ ul {
 
 li {
     margin: 1rem 0;
+    padding: 1rem;
+    -webkit-box-shadow: 0px 0px 10px 0 grey;
+    -moz-box-shadow: 0px 0px 10px 0 grey;
+    box-shadow: 0px 0px 10px 0 grey;
 }
 
-.stepList--wrapper {
-  padding: 0 1rem;
+img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%);
 }
+
 
 .stepList--wrapper li {
     list-style: none;
@@ -24,47 +42,35 @@ li {
     justify-content: left;
 }
 
-.stepList--description, .stepList--point {
-  border-bottom: 1px grey dashed;
-}
-
 .stepList--description {
-    width: 40%;
+    font-weight: 600;
+    line-height: $line-size;
+    vertical-align: middle;
+    flex: 1;
 }
 
 .stepList--point {
-    font-size: 2rem;
-    color: var(--color-primary);
-    width: 50%;
-    text-align: right;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
 
+.stepList--point-level {
+    color: grey;
+    font-size: 0.8rem;
+}
 .badge {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
     margin: 0 1rem 0 0;
     width: $line-size;
     height: $line-size;
     border-radius: $line-size;
-    border: 2px solid;
+    border: 1px solid grey;
     font-size: 2rem;
     line-height: 2.8rem;
     text-align: center;
-
-    .badge--vl {
-        top: -4rem;
-        position: relative;
-        left: 1.3rem;
-        border-left: 4px solid white;
-        height: 1.2rem;
-    }
-}
-
-.active {
-    color: var(--color-success);
-}
-
-.inactive {
-    color: var(--color-inactive);
-}
-.current {
-    color: var(--color-info);
 }
