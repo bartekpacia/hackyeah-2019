@@ -13,14 +13,7 @@ exports.refresh = functions.https.onRequest(async (request, response) => {
   const randomFact = facts[Math.floor(Math.random() * facts.length)]; // Pick a random fact
   const fact = randomFact.data();
 
-  response.send(
-    `<h1>${fact.question.en}</h1>
-    <p>${fact.answer1.en}</p>
-    <p>${fact.answer2.en}</p>
-    <p>${fact.answer3.en}</p>
-    <p>${fact.answer4.en}</p>
-    <p></p>`
-  );
+  response.json(fact);
 });
 
 // Currently unused
