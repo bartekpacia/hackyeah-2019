@@ -8,4 +8,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class CurrencyIconComponent {
   @Input() size = 30;
+  @Input() noMargin = false;
 }
