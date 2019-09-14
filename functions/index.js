@@ -13,6 +13,12 @@ exports.refresh = functions.https.onRequest(async (request, response) => {
   const randomFact = facts[Math.floor(Math.random() * facts.length)]; // Pick a random fact
   const fact = randomFact.data();
 
+  // Set the current question
+  await db
+    .collection("current-question")
+    .doc("current-question")
+    .set(fact);
+
   response.json(fact);
 });
 
