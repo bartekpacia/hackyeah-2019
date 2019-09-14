@@ -12,27 +12,3 @@
     justify-content: space-between;
   }
 }
-
-.level {
-  display: flex;
-  align-items: center;
-  color: var(--color-primary);
-  text-align: center;
-  font-size: 3rem;
-
-  &-description {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    text-shadow: 0 0 10px #fff;
-  }
-
-  &-title {
-    font-size: 2rem;
-    margin-bottom: 4px;
-  }
-
-  &-number {
-    font-size: 1rem;
-  }
-}
