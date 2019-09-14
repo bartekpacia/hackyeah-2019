@@ -6,7 +6,6 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      - aws-cli/setup
       - run:
           name: Update NPM
           command: "sudo npm install -g npm@latest ng firebase-tools"
@@ -29,7 +28,6 @@ jobs:
 
 orbs:
   slack: circleci/slack@3.3.0
-  gcp-cli: circleci/gcp-cli@1.8.2
 
 workflows:
   version: 2
