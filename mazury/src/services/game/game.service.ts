@@ -1,18 +1,39 @@
 // Initializes the `journey` service on path `/journey`
 import { Request, Response, NextFunction } from "express";
 import { Application } from '../../declarations';
+import firebase from "../../configuration/firebase/"
 
 import Hooks from "./game.hooks"
 
-const handler = (req: Request, res: Response, next: NextFunction) => {
-  console.log('request hit the server')
-  res.locals.result = "OKIDOKI";
-  next();
+const handler = async (req: Request, res: Response, next: NextFunction) => {
+  const questionRef = firebase.DB.collection('QUESTIONS').doc(req.body.questionId)
+  await questionRef.get().then(async doc => {
+    const question = doc.data()
+    if (!question) {
+      res.locals.err = "QUESTION NOT FOUND"
+      return next()
+    }
+    const { acceptedAnswerId, incorrectAnswerSum = 0, correctAnswerSum = 0 } = question;
+    if (acceptedAnswerId !== req.body.answerId) {
+      await questionRef.set({
+        incorrectAnswerSum: incorrectAnswerSum + 1,
+        succesRate: correctAnswerSum / (correctAnswerSum + incorrectAnswerSum)
+      }, { merge: true })
+      res.locals.result = "INCORRECT ANSWER"
+      return next();
+    }
+    await questionRef.set({
+      correctAnswerSum: correctAnswerSum + 1,
+      succesRate: correctAnswerSum / (correctAnswerSum + incorrectAnswerSum)
+    }, { merge: true })
+    res.locals.result = "CORRECT ANSWER"
+    return next();
+  })
 }
 
 
-export default function (app: Application) {
 
+export default function (app: Application) {
 
   app.route('/game')
   .post([
