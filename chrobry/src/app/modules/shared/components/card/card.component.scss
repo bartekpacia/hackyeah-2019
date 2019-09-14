@@ -15,7 +15,14 @@
         background: var(--color-bg);
         border-radius: 5px;
         overflow: hidden;
-        box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
+
+        @include breakpoint($mobile) {
+          box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
+        }
+
+        @include breakpoint($desktop) {
+          border: solid 1px #cccccc;
+        }
       }
 
       &-body {
@@ -49,9 +56,13 @@
           margin-bottom: 4px;
         }
 
-        &-number {
-          font-size: 1rem;
+        &-sublabel {
+          font-size: 1.2rem;
         }
+      }
+
+      &-progress {
+        margin-top: 5px;
       }
 
       &-footer {

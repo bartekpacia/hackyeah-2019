@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-card',
@@ -8,6 +9,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class CardComponent {
   @Input() label: string;
-  @Input() icon: string;
+  @Input() sublabel: string;
+  @Input() progress: number;
+  @Input() progressInfo: string;
+  @Input() icon: IconProp;
 
 }

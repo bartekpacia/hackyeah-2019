@@ -26,15 +26,20 @@ const routes: Routes = [
           .then(module => module.DashboardModule),
       },
       {
-        path: RoutingAppPages.Quiz,
+        path: RoutingAppPages.Games,
         canLoad: [AuthGuard],
-        loadChildren: () => import(`@app/modules/quiz/quiz.module`)
-          .then(module => module.QuizModule),
+        loadChildren: () => import(`@app/modules/games/games.module`)
+          .then(module => module.GamesModule),
       },
       {
         path: RoutingAppPages.Qr,
         loadChildren: () => import(`@app/modules/qr/qr.module`)
           .then(module => module.QrModule),
+      },
+      {
+        path: RoutingAppPages.Ranking,
+        loadChildren: () => import(`@app/modules/ranking/ranking.module`)
+          .then(module => module.RankingModule),
       },
       {
         path: RoutingAppPages.Progress,

@@ -3,18 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { GamesRoutingModule } from './games-routing.module';
+import { GamesComponent } from './containers/games/games.component';
 import { SharedModule } from '@app/modules/shared/shared.module';
 
-import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardComponent } from './containers/dashboard/dashboard.component';
-
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [GamesComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule,
     FontAwesomeModule,
+    GamesRoutingModule,
     SharedModule
   ]
 })
-export class DashboardModule { }
+export class GamesModule { }
