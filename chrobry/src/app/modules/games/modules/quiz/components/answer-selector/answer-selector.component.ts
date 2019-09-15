@@ -11,19 +11,16 @@ import {
 import { NUMBERING } from '@app/config/global';
 import { IQuestion } from '@app/interfaces/question.interface';
 import { AnswerService } from '@app/modules/games/modules/quiz/services/answer.service';
-
 import { DestroyableComponent } from '@app/modules/shared/components/abstracts/destroyable/destroyable.component';
+import { UserService } from '@app/modules/shared/services/user.service';
 
-import { takeUntil } from 'rxjs/operators';
-import { listAnimation } from '@app/animations/list.animation';
-// import { DB } from '@app/app.module';
+import { take, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-answer-selector',
   templateUrl: './answer-selector.component.html',
   styleUrls: ['./answer-selector.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [listAnimation],
 })
 export class AnswerSelectorComponent extends DestroyableComponent implements OnInit, OnChanges {
 
@@ -31,15 +28,18 @@ export class AnswerSelectorComponent extends DestroyableComponent implements OnI
   disableButtons: boolean;
   selectedAnswerId: number;
   numbering: string = NUMBERING;
+  success: boolean;
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private answerService: AnswerService,
+    private userService: UserService,
   ) {
     super();
   }
 
   private reset(): void {
+    this.success = undefined;
     this.selectedAnswerId = undefined;
     this.disableButtons = false;
     this.changeDetectorRef.detectChanges();
@@ -62,36 +62,14 @@ export class AnswerSelectorComponent extends DestroyableComponent implements OnI
     this.selectedAnswerId = answer;
     this.disableButtons = true;
     this.evaluate();
-
-    // this.answerService
-    //     .fetchCorrectAnswer(this.question)
-    //     .pipe(
-    //     takeUntil(this.componentDestroyed$),
-    //     take(1),
-    //     tap((answerInfo: IAnswerInfo) => {
-    //       this.answerInfo = answerInfo;
-    //       this.changeDetectorRef.detectChanges();
-    //
-    //       if (answer && answer.id === answerInfo.answerId) {
-    //         this.success = true;
-    //         this.scoreService.increaseBy(this.question.point);
-    //       } else {
-    //         this.success = false;
-    //       }
-    //     }),
-    //   ).subscribe(() => this.evaluate());
   }
 
   evaluate(): void {
-    // const docRef: any = DB.collection('QUESTIONS').doc('4XXxKHNk7VUSdfs3gk71');
-    // const getOptions: Object = {
-    //   source: 'server'
-    // };
-    //
-    // docRef.get(getOptions).then((doc) => {
-    //   console.log("Cached document data:", doc.data());
-    // }).catch(function(error) {
-    //   console.log("Error getting cached document:", error);
-    // });
+    this.answerService
+      .fetchCorrectAnswer(this.question.questionId, this.userService.user.id, this.selectedAnswerId)
+      .pipe(take(1)).subscribe((success: boolean) => {
+        this.success = success;
+        this.changeDetectorRef.detectChanges();
+    });
   }
 }

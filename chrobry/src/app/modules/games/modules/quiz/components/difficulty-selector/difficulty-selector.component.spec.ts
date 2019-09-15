@@ -5,23 +5,23 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { CategoryService } from '@app/modules/games/modules/quiz/services/category.service';
 import { LanguageService } from '@app/modules/shared/services/language.service';
 
-import { CategorySelectorComponent } from './category-selector.component';
+import { DifficultySelectorComponent } from './difficulty-selector.component';
 
 describe('CategorySelectorComponent', () => {
-  let component: CategorySelectorComponent;
-  let fixture: ComponentFixture<CategorySelectorComponent>;
+  let component: DifficultySelectorComponent;
+  let fixture: ComponentFixture<DifficultySelectorComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule, RouterTestingModule ],
-      declarations: [ CategorySelectorComponent ],
+      declarations: [ DifficultySelectorComponent ],
       providers: [ CategoryService, LanguageService ],
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CategorySelectorComponent);
+    fixture = TestBed.createComponent(DifficultySelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

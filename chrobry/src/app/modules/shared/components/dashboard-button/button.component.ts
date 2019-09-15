@@ -13,7 +13,10 @@ export class DashboardButtonComponent {
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
-  navigateTo(path: string): void {
+  navigateTo(path?: string): void {
+    if (!path) {
+      return;
+    }
     this.router.navigate([path], { relativeTo: this.relative ? this.route : undefined});
   }
 }

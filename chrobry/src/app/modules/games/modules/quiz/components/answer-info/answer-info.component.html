@@ -1,5 +1,5 @@
 <div class="modal-header" *ngIf="question">
-  <h1 class="modal-title">{{question.body || question.body}}</h1>
+  <h1 class="modal-title">{{question.body}}</h1>
 </div>
 <div class="modal-body" *ngIf="answerInfo">
   <img [src]="answerInfo.imgUrl" [alt]="answerInfo.imgUrl" width="100%" />

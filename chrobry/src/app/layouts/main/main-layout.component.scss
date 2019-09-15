@@ -1,7 +1,13 @@
+@import 'abstracts/mixins';
+
 :host {
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  .outlet-container {
+    flex-grow: 1;
+  }
 
   &::ng-deep > * {
     display: block;

@@ -20,10 +20,6 @@ body {
   height: 100vh;
   background: var(--color-bg);
   color: var(--color-text);
-
-  @include breakpoint($non-desktop) {
-    // overflow: hidden;
-  }
 }
 
 a {

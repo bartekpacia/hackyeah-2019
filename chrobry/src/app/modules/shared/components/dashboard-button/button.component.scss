@@ -1,4 +1,4 @@
-@import '../../../../../styles/abstracts/mixins';
+@import 'abstracts/mixins';
 
 $button-size: 48%;
 
@@ -24,7 +24,7 @@ $button-size: 48%;
 
   &:hover,
   &:active {
-    transform: scale(1.05);
+    transform: scale(0.95);
   }
 
   @include backdrop('/assets/images/ic-1200x740.jpeg');

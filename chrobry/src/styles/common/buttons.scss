@@ -66,6 +66,7 @@
     height: $button-selector-height;
     margin-bottom: 15px;
     padding-left: $button-selector-height;
+    padding-right: $button-selector-height;
     border-radius: $button-selector-height / 2;
     background: var(--color-secondary);
     color: var(--color-secondary-contrast);
@@ -74,11 +75,13 @@
       margin-bottom: 40px;
     }
 
+    @include backdrop('/assets/images/wagon.jpg');
+
     &:hover:not([disabled]):not(.disabled),
     &:active:not([disabled]):not(.disabled),
     &:focus:not([disabled]):not(.disabled),
     &.selected:not([disabled]):not(.disabled) {
-      transform: scale3d(1.05, 1.05, 1);
+      transform: scale(0.95);
     }
 
     &.selected {
@@ -100,7 +103,6 @@
       left: -1px;
       font-size: $button-selector-height * 0.75;
       line-height: $button-selector-height;
-      background: var(--color-black-low-opacity);
     }
   }
 }

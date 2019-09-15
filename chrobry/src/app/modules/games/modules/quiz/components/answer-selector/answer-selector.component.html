@@ -3,13 +3,13 @@
     type="button"
     class="button button-selector"
     *ngFor="let answer of question.answers; let index = index"
-    [@listAnimation]
     [disabled]="disableButtons"
     [ngClass]="{
         'selected': index === selectedAnswerId,
-        'success': index === 6
+        'success': index === selectedAnswerId && success
       }"
     (click)="selectAnswer(index)">
     <span class="letter">{{numbering[index]}}</span>{{answer}}
+    <span class="answer-status" *ngIf="index === selectedAnswerId && (success === true || success === false)" [class.success]="success" [class.error]="!success"></span>
   </button>
 </div>
