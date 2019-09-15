@@ -8,6 +8,6 @@ export const listAnimation: AnimationTriggerMetadata =
         stagger(300, [
           animate('0.5s', style({ opacity: 1 }))
         ])
-      ])
+      ], { optional: true })
     ])
   ]);

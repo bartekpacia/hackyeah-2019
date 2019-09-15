@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { listAnimation } from '@app/animations/list.animation';
 
 @Component({
@@ -8,34 +8,45 @@ import { listAnimation } from '@app/animations/list.animation';
   animations: [listAnimation],
 
 })
-export class ShopComponent {
+export class ShopComponent implements OnInit {
 
-  itemList = [
-    {
-      label: 'hamburger',
-      points: '2000',
-      image: 'hamburger'
-    },
-    {
-      label: 'fries',
-      points: '2000',
-      image: 'fries'
-    },
-    {
-      label: 'coffee',
-      points: '2000',
-      image: 'coffee'
-    },
-    {
-      label: 'chicken',
-      points: '2000',
-      image: 'chicken'
-    },
-    {
-      label: 'soup',
-      points: '2000',
-      image: 'soup'
-    },
-  ];
 
+  itemList = [];
+
+  constructor(private cdr: ChangeDetectorRef) {
+  }
+  ngOnInit(): void {
+
+    setTimeout(() => {
+      this.itemList = [
+        {
+          label: 'hamburger',
+          points: '2000',
+          image: 'hamburger'
+        },
+        {
+          label: 'fries',
+          points: '2000',
+          image: 'fries'
+        },
+        {
+          label: 'coffee',
+          points: '2000',
+          image: 'coffee'
+        },
+        {
+          label: 'chicken',
+          points: '2000',
+          image: 'chicken'
+        },
+        {
+          label: 'soup',
+          points: '2000',
+          image: 'soup'
+        },
+      ];
+
+      this.cdr.detectChanges();
+    });
+  }
 }

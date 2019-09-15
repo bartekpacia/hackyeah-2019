@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-progress',
@@ -7,6 +7,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RankingComponent implements OnInit {
+
 
   region = 'poland';
 
@@ -85,8 +86,13 @@ export class RankingComponent implements OnInit {
     ]
   };
 
+  constructor(private cdr: ChangeDetectorRef) { }
+
   ngOnInit(): void {
-    this.currentRegionList = this.regionList[this.region];
+    setTimeout(() => {
+      this.currentRegionList = this.regionList[this.region];
+      this.cdr.detectChanges();
+    });
   }
 
   selectRegion(region: string): void {
