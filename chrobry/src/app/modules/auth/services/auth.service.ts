@@ -18,11 +18,12 @@ export class AuthService {
       .post(`login`, credentials, { headers })
       .pipe().subscribe(
         // tslint:disable-next-line: no-empty
-        () => { },
+        (data) => {
+          this.userService.user = data;
+        },
         // tslint:disable-next-line: no-empty
         () => { },
         () => {
-          this.userService.user = credentials;
           this.router.navigate([RoutingPages.App]);
         }
       );
