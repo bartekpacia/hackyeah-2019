@@ -92,7 +92,7 @@ export class RankingComponent implements OnInit {
     setTimeout(() => {
       this.currentRegionList = this.regionList[this.region];
       this.cdr.detectChanges();
-    });
+    }, 1000);
   }
 
   selectRegion(region: string): void {
