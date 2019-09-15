@@ -1,9 +1,7 @@
-<div class="counter" *ngIf="counter$ | async as counter">
-  <span class="counter-step"
-        [class.finished]="counter.count > index + 1"
-        [class.current]="counter.count === index + 1"
-        *ngFor="let number of (counter.maxCount | fillArray); let index = index">{{index + 1}}</span>
-  <div class="counter-progress">
-    <span class="counter-progress-bar" [style.width.%]="progress$ | async"></span>
-  </div>
+<div class="counter" *ngIf="counterService?.counter$ | async as counter">
+  <span class="counter-step" *ngFor="let count of (counter | fillArray); let index = index">
+    <img *ngIf="index === 0" src="assets/images/trains/EP09-IC-a.gif" [alt]="index + 1">
+    <img *ngIf="index > 0" src="assets/images/trains/Amnopuz-158A-a.gif" [alt]="index + 1">
+    <span class="counter-icon">{{index + 1}}</span>
+  </span>
 </div>

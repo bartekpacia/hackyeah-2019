@@ -33,13 +33,17 @@ export class MenuComponent extends DestroyableComponent implements OnInit {
     this.user = JSON.parse(sessionStorage.getItem('user'));
   }
 
-  navigateTo(path: string): void {
+  closeMenu(): void {
     this.menuService.close();
+  }
+
+  navigateTo(path: string): void {
+    this.closeMenu();
     this.router.navigate([path]);
   }
 
   logout(): void {
-    this.menuService.close();
+    this.closeMenu();
     this.authService.logout();
   }
 }

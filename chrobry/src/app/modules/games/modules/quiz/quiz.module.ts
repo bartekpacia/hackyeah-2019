@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AnswerInfoComponent } from '@app/modules/games/modules/quiz/components/answer-info/answer-info.component';
 import { AnswerSelectorComponent } from '@app/modules/games/modules/quiz/components/answer-selector/answer-selector.component';
-import { CategorySelectorComponent } from '@app/modules/games/modules/quiz/components/category-selector/category-selector.component';
-import { CategoryComponent } from '@app/modules/games/modules/quiz/components/category/category.component';
+import { DifficultySelectorComponent } from '@app/modules/games/modules/quiz/components/difficulty-selector/difficulty-selector.component';
+import { DifficultyComponent } from '@app/modules/games/modules/quiz/components/difficulty/difficulty.component';
 import { CounterComponent } from '@app/modules/games/modules/quiz/components/counter/counter.component';
 import { ModalComponent } from '@app/modules/games/modules/quiz/components/modal/modal.component';
 import { QuestionComponent } from '@app/modules/games/modules/quiz/components/question/question.component';
@@ -25,6 +25,7 @@ import { DomService } from '@app/modules/shared/services/dom.service';
 import { QuizRoutingModule } from './quiz-routing.module';
 import { FillArrayPipe } from './pipes/fill-array.pipe';
 import { SharedModule } from '@app/modules/shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -32,8 +33,8 @@ import { SharedModule } from '@app/modules/shared/shared.module';
     SummaryComponent,
     AnswerInfoComponent,
     AnswerSelectorComponent,
-    CategoryComponent,
-    CategorySelectorComponent,
+    DifficultyComponent,
+    DifficultySelectorComponent,
     CounterComponent,
     ModalComponent,
     QuestionComponent,
@@ -48,6 +49,7 @@ import { SharedModule } from '@app/modules/shared/shared.module';
     CommonModule,
     QuizRoutingModule,
     SharedModule,
+    FontAwesomeModule,
   ],
   providers: [
     AnswerService,

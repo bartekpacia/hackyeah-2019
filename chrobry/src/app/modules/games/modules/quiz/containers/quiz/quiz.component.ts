@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-
-import { ICategory } from '@app/interfaces/category.interface';
 import { CategoryService } from '@app/modules/games/modules/quiz/services/category.service';
 
 import { DestroyableComponent } from '@app/modules/shared/components/abstracts/destroyable/destroyable.component';
@@ -15,8 +13,8 @@ import { takeUntil } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizComponent extends DestroyableComponent implements OnInit {
-  selectedCategory$: Observable<ICategory>;
-  categories$: Observable<Array<ICategory>>;
+  selectedDifficulty$: Observable<number>;
+  difficultyLevels$: Observable<Array<number>>;
 
   constructor(private categoryService: CategoryService) {
     super();
@@ -24,11 +22,11 @@ export class QuizComponent extends DestroyableComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.categories$ = this.categoryService
+    this.difficultyLevels$ = this.categoryService
       .fetchCategories()
       .pipe(takeUntil(this.componentDestroyed$));
 
-    this.selectedCategory$ = this.categoryService.category$
+    this.selectedDifficulty$ = this.categoryService.difficulty$
       .asObservable()
       .pipe(takeUntil(this.componentDestroyed$));
   }

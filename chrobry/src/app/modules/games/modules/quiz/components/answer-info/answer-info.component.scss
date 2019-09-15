@@ -1,4 +1,4 @@
-@import '../../../../../../../styles/abstracts/mixins';
+@import 'abstracts/mixins';
 
 @keyframes pop {
   0% { transform: scale3d(10, 10, 1) rotateZ(45deg); opacity: 0; }

@@ -1,37 +1,16 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-
-import { ICounter } from '@app/interfaces/counter.interface';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CounterService } from '@app/modules/games/modules/quiz/services/counter.service';
-
-import { DestroyableComponent } from '@app/modules/shared/components/abstracts/destroyable/destroyable.component';
-
-import { BehaviorSubject, Observable } from 'rxjs';
-import { takeUntil, tap } from 'rxjs/operators';
+import { fadeInOut } from '@app/animations/fade-in-out.animation';
 
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [fadeInOut]
 })
-export class CounterComponent extends DestroyableComponent implements OnInit {
-  counter$: Observable<ICounter>;
-  progress$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+export class CounterComponent {
 
-  constructor(private counterService: CounterService) {
-    super();
-  }
-
-  ngOnInit(): void {
-    this.counter$ = this.counterService.counter$
-      .asObservable()
-      .pipe(
-        takeUntil(this.componentDestroyed$),
-        tap((counter: ICounter) => {
-          const progress: number = 100 / (counter.maxCount - 1) * (counter.count - 1);
-          this.progress$.next(progress);
-        })
-      );
-  }
+  constructor(public counterService: CounterService) { }
 
 }

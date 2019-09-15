@@ -1,0 +1,6 @@
+<div class="difficulty-selector" [class.has-selected]="selectedDifficultyId">
+  <app-dashboard-button class="difficulty-selector-button" *ngFor="let difficulty of difficulties; let index = index" (click)="selectDifficulty(index + 1)">
+    <fa-icon class="icon" [icon]="difficulty.icon"></fa-icon>
+    {{difficulty.label}}
+  </app-dashboard-button>
+</div>

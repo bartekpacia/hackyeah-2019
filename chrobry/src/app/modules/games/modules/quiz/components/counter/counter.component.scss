@@ -1,47 +1,58 @@
-@import '../../../../../../../styles/abstracts/variables';
+@import 'abstracts/variables';
 
-$step-size: 30px;
+$step-size: 15px;
 
 .counter {
   position: relative;
+  z-index: 1;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
   width: 100%;
+  border-bottom: dashed 1px #333;
+  overflow: hidden;
+  border-radius: 0 10px 0 0;
+  box-shadow: inset 0 -1px 0 0 #333;
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: solid 1px #333;
+    border-radius: 15px 15px 0 0;
+    background: #333;
+  }
 
   &-step {
+    position: relative;
+    z-index: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: $step-size;
     height: $step-size;
     font-size: $step-size - 10;
     border-radius: 50%;
-    background: var(--color-tertiary);
-    color: var(--color-tertiary-contrast);
-    transition: all 1s ease;
+    color: var(--color-tertiary);
+    transition: all 1s ease-in-out;
 
-    &.current,
-    &.finished {
-      background: var(--color-secondary);
-      color: var(--color-secondary-contrast);
+    &:first-of-type {
+      height: $step-size + 5;
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      width: auto;
+
     }
   }
 
-  &-progress {
-    display: block;
+  &-icon {
     position: absolute;
-    z-index: -1;
-    width: 100%;
-    background: var(--color-info);
-
-    &-bar {
-      display: block;
-      width: 0;
-      background: var(--color-secondary);
-      height: 2px;
-      transition: all 1s ease;
-    }
+    font-size: 12px;
   }
 }

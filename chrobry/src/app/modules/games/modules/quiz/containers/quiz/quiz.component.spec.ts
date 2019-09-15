@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AnswerSelectorComponent } from '@app/modules/games/modules/quiz/components/answer-selector/answer-selector.component';
-import { CategorySelectorComponent } from '@app/modules/games/modules/quiz/components/category-selector/category-selector.component';
-import { CategoryComponent } from '@app/modules/games/modules/quiz/components/category/category.component';
+import { DifficultySelectorComponent } from '@app/modules/games/modules/quiz/components/difficulty-selector/difficulty-selector.component';
+import { DifficultyComponent } from '@app/modules/games/modules/quiz/components/difficulty/difficulty.component';
 import { CounterComponent } from '@app/modules/games/modules/quiz/components/counter/counter.component';
 import { QuestionComponent } from '@app/modules/games/modules/quiz/components/question/question.component';
 import { TimerComponent } from '@app/modules/games/modules/quiz/components/timer/timer.component';
@@ -24,8 +24,8 @@ describe('QuizComponent', () => {
         QuestionComponent,
         TimerComponent,
         AnswerSelectorComponent,
-        CategoryComponent,
-        CategorySelectorComponent,
+        DifficultyComponent,
+        DifficultySelectorComponent,
         CounterComponent,
       ],
       providers: [ CategoryService ]

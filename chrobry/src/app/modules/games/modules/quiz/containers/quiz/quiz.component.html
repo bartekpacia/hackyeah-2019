@@ -1,10 +1,8 @@
 <div class="container">
   <main role="main" class="main">
-    <app-question [category]="selectedCategory" *ngIf="selectedCategory$ | async as selectedCategory; else selectCategory"></app-question>
-    <ng-template #selectCategory>
-      <app-category></app-category>
+    <app-question [difficulty]="difficulty" *ngIf="selectedDifficulty$ | async as difficulty; else selectDifficulty"></app-question>
+    <ng-template #selectDifficulty>
+      <app-difficulty></app-difficulty>
     </ng-template>
   </main>
 </div>
-
-<app-modal></app-modal>

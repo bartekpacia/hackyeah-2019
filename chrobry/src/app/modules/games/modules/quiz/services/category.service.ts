@@ -1,29 +1,16 @@
-import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { ICategory } from '@app/interfaces/category.interface';
-import { QuestionService } from '@app/modules/games/modules/quiz/services/question.service';
-import { CustomHttpParams, HttpService } from '@app/modules/shared/services/http.service';
-
-import { Observable, Subject } from 'rxjs';
-import { first } from 'rxjs/operators';
+import { Observable, of, Subject } from 'rxjs';
 
 @Injectable()
 export class CategoryService {
-  category$: Subject<ICategory> = new Subject<ICategory>();
+  difficulty$: Subject<number> = new Subject<number>();
 
-  constructor(private http: HttpService, private questionService: QuestionService) { }
-
-  fetchCategories(): Observable<Array<ICategory>> {
-    const headers: HttpHeaders = new HttpHeaders().set(CustomHttpParams.LoaderMessage, 'Loading categories');
-
-    return this.http
-      .get('categories', { headers })
-      .pipe(first());
+  fetchCategories(): Observable<Array<number>> {
+    return of([1, 2, 3]);
   }
 
-  setCategory(category: ICategory): void {
-    this.category$.next(category);
-    this.questionService.reset(category.questions);
+  setDifficulty(difficulty: number): void {
+    this.difficulty$.next(difficulty);
   }
 }

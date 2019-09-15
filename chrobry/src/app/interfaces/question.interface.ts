@@ -1,4 +1,5 @@
 export interface IQuestion {
+  questionId: string;
   categories: Array<string>;
   difficulty: number;
   imgUrl: string;
