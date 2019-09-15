@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { ModalComponent } from '@app/modules/games/modules/quiz/components/modal/modal.component';
-
 import { DidYouKnowRoutingModule } from './did-you-know-routing.module';
 import { SharedModule } from '@app/modules/shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -14,7 +12,6 @@ import { AnswerFactComponent } from '@app/modules/games/modules/did-you-know/com
   declarations: [
     DidYouKnowComponent,
     AnswerFactComponent,
-    ModalComponent,
     QuestionComponent,
   ],
   entryComponents: [
