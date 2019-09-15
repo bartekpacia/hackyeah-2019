@@ -45,7 +45,21 @@
 
       &-tertiary {
         text-align: left;
-        color: var(--color-primary);
+        // color: var(--color-primary);
+      }
+
+      &-has-action {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          display: block;
+          width: 15px;
+          height: 15px;
+          background: var(--color-primary);
+          border-radius: 50%;
+        }
       }
     }
   }
