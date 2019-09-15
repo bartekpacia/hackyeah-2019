@@ -9,7 +9,8 @@ exports.refresh = functions.https.onRequest(async (request, response) => {
   const facts = factsQuery.docs;
 
   const randomFact = facts[Math.floor(Math.random() * facts.length)]; // Pick a random fact
-  const fact = randomFact.data();
+  let fact = randomFact.data();
+  fact.questionId = randomFact.id();
 
   // Delete the correct answer from the current question, so it's NOT visible on the client side
   delete fact.acceptedAnswerId;
@@ -18,10 +19,7 @@ exports.refresh = functions.https.onRequest(async (request, response) => {
   await db
     .collection("current-question")
     .doc("current-question")
-    .set({
-      ...fact,
-      questionId: randomFact.id()
-    });
+    .set(fact);
 
   response.json(fact);
 });
