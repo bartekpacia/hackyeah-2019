@@ -21,6 +21,6 @@
       <button type="button" class="button" [class.active]="region === 'mazowieckie'" (click)="selectRegion('mazowieckie')">Mazowieckie</button>
       <button type="button" class="button" [class.active]="region === 'warsaw'" (click)="selectRegion('warsaw')">Warsaw</button>
     </app-button-group>
-    <app-ranking-list [region]="region"></app-ranking-list>
+    <app-ranking-list [regionList]="currentRegionList"></app-ranking-list>
   </main>
 </div>

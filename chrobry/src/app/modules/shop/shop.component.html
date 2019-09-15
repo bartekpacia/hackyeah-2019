@@ -14,7 +14,7 @@
 
     <div
       class="container--footer"
-      [@listAnimation]>
+      [@listAnimation]="itemList.length">
       <div
         *ngFor="let item of itemList"
         class="container--footer-item">

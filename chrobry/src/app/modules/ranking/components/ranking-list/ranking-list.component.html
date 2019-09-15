@@ -1,8 +1,8 @@
 <div class="ranking">
   <ul
     class="ranking-list"
-    [@listAnimation]="region">
-    <li class="ranking-list-item" *ngFor="let item of regions[region]; let first = first; index as i">
+    [@listAnimation]="regionList.length">
+    <li class="ranking-list-item" *ngFor="let item of regionList; let first = first; index as i">
       <ng-container [ngSwitch]="i">
         <span *ngSwitchCase="0" class="ranking-position first">
           <fa-icon icon="medal"></fa-icon>

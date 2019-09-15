@@ -14,14 +14,15 @@ const routes: Routes = [
   },
   {
     path: RoutingPages.App,
-    // canActivate: [AuthGuard],
-    // canActivateChild: [AuthGuard],
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     component: MainLayoutComponent,
     children: [
       { path: RoutingPages.App, pathMatch: 'full', redirectTo: RoutingAppPages.Dashboard },
       {
         path: RoutingAppPages.Dashboard,
         canLoad: [AuthGuard],
+        data: { animation: 'Home' },
         loadChildren: () => import(`@app/modules/dashboard/dashboard.module`)
           .then(module => module.DashboardModule),
       },
