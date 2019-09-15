@@ -23,7 +23,6 @@ export class QuestionComponent extends DestroyableComponent implements OnInit {
     this.http.get('did-you-know')
       .pipe(takeUntil(this.componentDestroyed$))
       .subscribe((question) => {
-        // console.log(question);
         this.question$.next(question);
       });
   }
