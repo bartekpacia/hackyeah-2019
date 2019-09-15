@@ -1,12 +1,12 @@
 import { ProgressComponent } from './containers/progress/progress.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RoutingProgressPages } from '@app/config/routing';
+import { RoutingRankingPages } from '@app/config/routing';
 
 const routes: Routes = [
   {
     pathMatch: 'full',
-    path: RoutingProgressPages.Home,
+    path: RoutingRankingPages.Home,
     component: ProgressComponent,
   }
 ];

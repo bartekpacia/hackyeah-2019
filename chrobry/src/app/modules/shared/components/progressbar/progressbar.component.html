@@ -1,3 +1,4 @@
-<div class="progress-wrap progress">
+<div class="progress" [style.height.px]="size">
   <div class="progress-bar" [style.width.%]="progress"></div>
 </div>
+<span class="progress-info" *ngIf="info">{{info}}</span>

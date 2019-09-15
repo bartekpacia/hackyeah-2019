@@ -13,20 +13,24 @@ export class AuthGuard implements CanLoad {
     if (sessionStorage.getItem('user')) {
       return true;
     }
+
     this.router.navigate([RoutingPages.Login]);
 
     return false;
   }
 
   canLoad(): boolean {
+
     return this.authLogic();
   }
 
   canActivate(): boolean {
+
     return this.authLogic();
   }
 
   canActivateChild(): boolean {
+
     return this.authLogic();
   }
 }

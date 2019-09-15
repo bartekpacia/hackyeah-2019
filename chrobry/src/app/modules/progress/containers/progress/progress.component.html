@@ -1,15 +1,5 @@
 <div class="container">
-  <app-card>
-    <div class="card-body">
-      <h1 class="card-title">
-        <fa-icon
-          icon="crown"
-          class="icon"></fa-icon>
-        <span class="card-title-description">
-          <span class="card-title-label">Ranking</span>
-        </span>
-      </h1>
-    </div>
+  <app-card icon="crown" label="Ranking">
     <div class="card-footer">
       <div class="card-footer-item">
         Poland
@@ -26,6 +16,11 @@
     </div>
   </app-card>
   <main role="main" class="main">
-    <app-ranking></app-ranking>
+    <app-button-group>
+      <button type="button" class="button" [class.active]="region === 'poland'" (click)="selectRegion('poland')">Poland</button>
+      <button type="button" class="button" [class.active]="region === 'mazowieckie'" (click)="selectRegion('mazowieckie')">Mazowieckie</button>
+      <button type="button" class="button" [class.active]="region === 'warsaw'" (click)="selectRegion('warsaw')">Warsaw</button>
+    </app-button-group>
+    <app-ranking [regionsList]="currentRegionList"></app-ranking>
   </main>
 </div>

@@ -8,20 +8,21 @@
   bottom: 0;
   transform: translateX(100%);
   right: 0;
-  padding: 20px;
+  padding: 60px 20px 20px;
   opacity: 0;
   background: var(--menu-bg);
   color: var(--menu-color);
   transition: all 0.2s ease-in;
-  z-index: -1;
+  z-index: 11;
+  width: 100%;
 
   &.show {
     transform: translateX(0);
     opacity: 1;
-    z-index: 11;
 
     @include breakpoint($desktop) {
       left: 30%;
+      width: auto;
     }
   }
 
@@ -47,5 +48,24 @@
         color: var(--color-primary);
       }
     }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+  background: var(--color-black-low-opacity);
+  transform: translateX(-100%);
+  cursor: pointer;
+
+  &.show {
+    opacity: .9;
+    transform: translateX(0);
   }
 }

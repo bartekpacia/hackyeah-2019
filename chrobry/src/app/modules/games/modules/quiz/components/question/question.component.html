@@ -1,0 +1,9 @@
+<div class="question" *ngIf="question$ | async as question">
+  <app-timer></app-timer>
+  <div class="question-header">
+    <app-counter></app-counter>
+    <h1 class="question-label">{{question.body}}</h1>
+  </div>
+  <app-answer-selector [question]="question">
+  </app-answer-selector>
+</div>

@@ -21,6 +21,7 @@ import { RouterModule } from '@angular/router';
 import { BackdropComponent } from './components/backdrop/backdrop.component';
 import { CardComponent } from './components/card/card.component';
 import { ProgressbarComponent } from './components/progressbar/progressbar.component';
+import { DashboardButtonComponent } from './components/dashboard-button/button.component';
 
 const declarations: Array<any> = [
   FooterComponent,
@@ -31,7 +32,8 @@ const declarations: Array<any> = [
   CurrencyIconComponent,
   BackdropComponent,
   CardComponent,
-  ProgressbarComponent
+  ProgressbarComponent,
+  DashboardButtonComponent,
 ];
 
 @NgModule({

@@ -1,0 +1,51 @@
+@import 'abstracts/mixins';
+
+$button-size: 48%;
+
+:host {
+  width: $button-size;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 115px;
+  color: var(--color-secondary-contrast);
+  background-color: var(--color-secondary);
+  background-blend-mode: overlay;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 2px 5px #ccc;
+
+  &:hover,
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @include backdrop('/assets/images/ic-1200x740.jpeg');
+
+  ::ng-deep {
+    span {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 8px;
+
+      &-important {
+        color: var(--color-primary);
+      }
+    }
+  }
+}

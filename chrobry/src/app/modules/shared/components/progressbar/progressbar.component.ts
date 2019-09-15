@@ -7,5 +7,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProgressbarComponent {
+  @Input() size = 6;
   @Input() progress: number;
+  @Input() info: string;
 }

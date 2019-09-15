@@ -12,27 +12,27 @@
         </button>
       </li>
       <li>
-        <button type="button" class="button button-tertiary" (click)="navigateTo(RoutingAppPages.Qr)">
-          <fa-icon icon="plus"></fa-icon>
-          Add ticket
-        </button>
-      </li>
-      <li>
-        <button type="button" class="button button-tertiary" (click)="navigateTo(RoutingAppPages.Dashboard)">
-          <fa-icon icon="route"></fa-icon>
-          Your trip
-        </button>
-      </li>
-      <li>
-        <button type="button" class="button button-tertiary" (click)="navigateTo(RoutingAppPages.Quiz)">
-          <fa-icon icon="question-circle"></fa-icon>
-          Quiz
+        <button type="button" class="button button-tertiary" (click)="navigateTo(RoutingAppPages.Games)">
+          <fa-icon icon="gamepad"></fa-icon>
+          Games
         </button>
       </li>
       <li>
         <button type="button" class="button button-tertiary" (click)="navigateTo(RoutingAppPages.Dashboard)">
           <fa-icon icon="store-alt"></fa-icon>
-          PKPoints
+          Shop
+        </button>
+      </li>
+      <li>
+        <button type="button" class="button button-tertiary" (click)="navigateTo(RoutingAppPages.Progress)">
+          <fa-icon icon="trophy"></fa-icon>
+          Trophies
+        </button>
+      </li>
+      <li>
+        <button type="button" class="button button-tertiary" (click)="navigateTo(RoutingAppPages.Ranking)">
+          <fa-icon icon="crown"></fa-icon>
+          Ranking
         </button>
       </li>
     </ul>
@@ -42,3 +42,4 @@
     </button>
   </nav>
 </section>
+<div class="backdrop" [class.show]="showMenu$ | async" (click)="closeMenu()"></div>

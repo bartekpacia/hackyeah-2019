@@ -1,5 +1,17 @@
-<aside class="card" role="presentation">
+<aside
+  class="card"
+  role="presentation">
   <div class="card-content">
+    <div class="card-body">
+      <h1 class="card-title">
+        <fa-icon [icon]="icon" class="icon"></fa-icon>
+        <span class="card-title-description">
+          <span class="card-title-label">{{label}}</span>
+          <span class="card-title-sublabel" *ngIf="sublabel">{{sublabel}}</span>
+          <app-progressbar class="card-progress" *ngIf="progress || progress === 0" [progress]="progress" [info]="progressInfo"></app-progressbar>
+        </span>
+      </h1>
+    </div>
     <ng-content></ng-content>
   </div>
 </aside>

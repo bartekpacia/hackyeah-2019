@@ -1,0 +1,22 @@
+<div class="modal-header" *ngIf="question">
+  <h1 class="modal-title">{{question.body}}</h1>
+</div>
+<div class="modal-body" *ngIf="answerInfo">
+  <img [src]="answerInfo.imgUrl" [alt]="answerInfo.imgUrl" width="100%" />
+  <h2 class="modal-answer" [class.success]="success" [class.error]="!success">
+    <span class="modal-answer-text">{{answerInfo.label[selectedLanguage] || answerInfo.label[defaultLanguage]}}</span>
+    <span class="modal-answer-icon"></span>
+  </h2>
+  <div class="modal-text" [innerHTML]="answerInfo.text[selectedLanguage] || answerInfo.text[defaultLanguage]"></div>
+</div>
+<div class="modal-footer">
+  <a class="button button-secondary" [href]="answerInfo.linkUrl" target="_blank" rel="nofollow">Read more</a>
+  <button *ngIf="lastAnswer$ | async; else nextButton" type="button" class="button button-primary" (click)="finish()">
+    Finish
+  </button>
+  <ng-template #nextButton>
+    <button type="button" class="button button-primary" (click)="next()">
+      Next question
+    </button>
+  </ng-template>
+</div>

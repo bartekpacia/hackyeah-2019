@@ -14,22 +14,23 @@ const routes: Routes = [
   },
   {
     path: RoutingPages.App,
-    // canActivate: [AuthGuard],
-    // canActivateChild: [AuthGuard],
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     component: MainLayoutComponent,
     children: [
       { path: RoutingPages.App, pathMatch: 'full', redirectTo: RoutingAppPages.Dashboard },
       {
         path: RoutingAppPages.Dashboard,
         canLoad: [AuthGuard],
+        data: { animation: 'Home' },
         loadChildren: () => import(`@app/modules/dashboard/dashboard.module`)
           .then(module => module.DashboardModule),
       },
       {
-        path: RoutingAppPages.Quiz,
+        path: RoutingAppPages.Games,
         canLoad: [AuthGuard],
-        loadChildren: () => import(`@app/modules/quiz/quiz.module`)
-          .then(module => module.QuizModule),
+        loadChildren: () => import(`@app/modules/games/games.module`)
+          .then(module => module.GamesModule),
       },
       {
         path: RoutingAppPages.Qr,
@@ -37,9 +38,24 @@ const routes: Routes = [
           .then(module => module.QrModule),
       },
       {
+        path: RoutingAppPages.Ranking,
+        loadChildren: () => import(`@app/modules/ranking/ranking.module`)
+          .then(module => module.RankingModule),
+      },
+      {
         path: RoutingAppPages.Progress,
         loadChildren: () => import(`@app/modules/progress/progress.module`)
           .then(module => module.ProgressModule),
+      },
+      {
+        path: RoutingAppPages.Shop,
+        loadChildren: () => import(`@app/modules/shop/shop.module`)
+          .then(module => module.ShopModule),
+      },
+      {
+        path: RoutingAppPages.Trophies,
+        loadChildren: () => import(`@app/modules/trophies/trophies.module`)
+          .then(module => module.TrophiesModule),
       },
     ],
   }

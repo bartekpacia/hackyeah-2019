@@ -1,0 +1,43 @@
+p {
+  margin: 0.5rem;
+}
+
+.card-footer {
+  width: 100%;
+}
+
+.image--icon {
+  display: block;
+  width: 100%; // to maintain aspect ratio. You can use 100% if you don't care about that
+  height: auto;
+}
+
+.container--footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  &-box {
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid orange;
+  }
+
+  &-item {
+    flex: 0 50%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.font--bolded {
+  font-weight: 600;
+}
+
+.logo--icon {
+  width: 50%;
+  margin: auto;
+}

@@ -1,0 +1,14 @@
+@import 'abstracts/mixins';
+
+.difficulty-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &-button {
+    width: 31%;
+    @include breakpoint($mobile) {
+      width: 100%;
+    }
+  }
+}
