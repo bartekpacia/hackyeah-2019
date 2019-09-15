@@ -22,6 +22,7 @@
 
     @include breakpoint($desktop) {
       left: 30%;
+      width: auto;
     }
   }
 

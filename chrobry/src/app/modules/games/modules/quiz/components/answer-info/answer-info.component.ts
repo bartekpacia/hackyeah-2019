@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 
 import { DEFAULT_LANGUAGE, Language } from '@app/config/global';
 import { IAnswerInfo } from '@app/interfaces/answer.interface';
-import { ICounter } from '@app/interfaces/counter.interface';
 import { IQuestion } from '@app/interfaces/question.interface';
 import { CounterService } from '@app/modules/games/modules/quiz/services/counter.service';
 import { ModalService } from '@app/modules/games/modules/quiz/services/modal.service';
@@ -41,7 +40,7 @@ export class AnswerInfoComponent extends DestroyableComponent implements OnInit 
       .asObservable()
       .pipe(
         takeUntil(this.componentDestroyed$),
-        map((counter: ICounter) => counter.count === counter.maxCount)
+        map((counter: number) => counter > 0)
       );
   }
 
