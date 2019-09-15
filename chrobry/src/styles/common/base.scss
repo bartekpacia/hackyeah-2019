@@ -22,7 +22,7 @@ body {
   color: var(--color-text);
 
   @include breakpoint($non-desktop) {
-    overflow: hidden;
+    // overflow: hidden;
   }
 }
 
