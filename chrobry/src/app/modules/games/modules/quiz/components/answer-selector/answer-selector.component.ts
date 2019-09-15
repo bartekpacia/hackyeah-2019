@@ -66,7 +66,7 @@ export class AnswerSelectorComponent extends DestroyableComponent implements OnI
 
   evaluate(): void {
     this.answerService
-      .fetchCorrectAnswer(this.question.questionId, this.userService.user.id, this.selectedAnswerId)
+      .fetchCorrectAnswer(this.question.questionId, this.userService.user.userId, this.selectedAnswerId)
       .pipe(take(1)).subscribe((success: boolean) => {
         this.success = success;
         this.changeDetectorRef.detectChanges();

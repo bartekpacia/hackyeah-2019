@@ -2,7 +2,7 @@ import { Language } from '@app/config/global';
 import { IScore } from '@app/interfaces/score.interface';
 
 export interface IUser {
-  id: string;
+  userId: string;
   lang: Language;
   firstName: string;
   middleName: string;
