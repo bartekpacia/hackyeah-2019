@@ -10,5 +10,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 export class DifficultyComponent {
   difficulties: Array<{ label: string; icon: IconProp; }> = [
     { label: 'For kids', icon: 'child' },
+    { label: 'Casual', icon: 'male' },
+    { label: 'Challenging', icon: 'user-graduate' },
   ];
 }

@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
       .onSnapshot((data) => {
         data.forEach((item) => {
           if (this.userService.user.currentUser.email === item.data().email) {
-            this.userService.user.currentUser = (item.data() as any);
+            this.userService.user.currentUser = { ...this.userService.user.currentUser, ...(item.data() as any) };
           }
         });
       });
