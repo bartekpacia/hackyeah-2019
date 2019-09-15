@@ -1,4 +1,5 @@
 <div class="container" *ngIf="user">
+  <aside class="aside">
     <app-card
       icon="award"
       label="Train conductor"
@@ -19,7 +20,25 @@
               <span class="card-footer-item-result"># 10</span>
             </div>
         </div>
-    </app-card>
+      </app-card>
+      <div class="trophies">
+        <button type="button" class="button trophies-badge" (click)="navigateToBadges()">
+          <img class="trophies-icon" src="/assets/images/badges/60.png" alt="Trophy">
+        </button>
+        <button type="button" class="button trophies-badge" (click)="navigateToBadges()">
+          <img class="trophies-icon" src="/assets/images/badges/70.png" alt="Trophy">
+        </button>
+        <button type="button" class="button trophies-badge" (click)="navigateToBadges()">
+          <img class="trophies-icon" src="/assets/images/badges/100.png" alt="Trophy">
+        </button>
+        <button type="button" class="button trophies-badge" (click)="navigateToBadges()">
+          <img class="trophies-icon" src="/assets/images/badges/10.png" alt="Trophy">
+        </button>
+        <button type="button" class="button trophies-badge" (click)="navigateToBadges()">
+          <img class="trophies-icon" src="/assets/images/badges/90.png" alt="Trophy">
+        </button>
+      </div>
+    </aside>
     <main role="main" class="main">
         <section class="dashboard-selector">
             <app-dashboard-button [pathTo]="RoutingAppPages.Games">
