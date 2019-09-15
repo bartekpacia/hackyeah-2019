@@ -35,9 +35,9 @@ export class HttpService {
       .pipe(map((response: any) => response));
   }
 
-  post(endpoint: string, options?: IHttpOptions): Observable<any> {
+  post(endpoint: string, body: any, options?: IHttpOptions): Observable<any> {
     return this.http
-      .post(this.api + endpoint, options)
+      .post(this.api + endpoint, body, options)
       .pipe(map((response: any) => response));
   }
 }

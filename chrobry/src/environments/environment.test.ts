@@ -7,6 +7,6 @@ const baseHref = '/';
 export const environment: IEnvironment = {
   api: 'https://hackyeah-2019.appspot.com/',
   baseHref,
-  production: true,
+  production: false,
   version,
 };
