@@ -1,11 +1,12 @@
 <section class="menu" role="navigation" [class.show]="showMenu$ | async">
   <div class="user--info" *ngIf="user">
-    <div>
-    <h1>{{user?.currentUser?.firstName}} {{user?.currentUser?.lastName}} ({{user?.currentUser?.email}})</h1>
-    <h2>PKPoints: {{user?.currentUser?.pkpPoints}}</h2>
+    <div class="user--info-box">
+      <div class="user--info-fullname">{{user?.currentUser?.firstName}} {{user?.currentUser?.lastName}} </div>
+      <div>({{user?.currentUser?.email}})</div>
+      <div class="user--info-description">PKPoints: {{user?.currentUser?.pkpPoints}}</div>
     </div>
     <div class="badge">
-
+      <img class="user--info-icon" src="/assets/images/avatars/avatar_men3.png">
     </div>
 
   </div>

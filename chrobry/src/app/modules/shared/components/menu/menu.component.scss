@@ -1,24 +1,45 @@
 @import 'abstracts/mixins';
 
-$line-size: 4rem;
+$line-size: 5rem;
 
 .user--info {
   display: flex;
   flex-direction: row wrap;
+  justify-content: space-between;
   margin-top: 1rem;
-  font-size: 0.6rem;
+
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+
+  &-fullname {
+    font-weight: 600;
+  }
+
+  &-description {
+    font-size: 0.9rem;
+    color: grey;
+  }
+
+  &-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .badge {
   position: relative;
   display: inline-block;
   overflow: hidden;
-  margin: 0 1rem 0 0;
+  // margin: 0 1rem 0 0;
   width: $line-size;
   height: $line-size;
   border-radius: $line-size;
-  font-size: 2rem;
-  line-height: 2.8rem;
+  // line-height: 2.8rem;
   text-align: center;
 }
 
