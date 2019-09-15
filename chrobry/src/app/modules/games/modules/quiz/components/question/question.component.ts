@@ -1,15 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-
-import { DEFAULT_LANGUAGE, Language } from '@app/config/global';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { ICategory } from '@app/interfaces/category.interface';
 import { IQuestion } from '@app/interfaces/question.interface';
-import { QuestionService } from '@app/modules/games/modules/quiz/services/question.service';
 
 import { DestroyableComponent } from '@app/modules/shared/components/abstracts/destroyable/destroyable.component';
-import { LanguageService } from '@app/modules/shared/services/language.service';
-
-import { Observable } from 'rxjs';
-import { take, takeUntil } from 'rxjs/operators';
+import { DB } from '@app/app.module';
+import { Subject } from 'rxjs';
+import { TimerService } from '@app/modules/games/modules/quiz/services/timer.service';
 
 @Component({
   selector: 'app-question',
@@ -17,43 +13,26 @@ import { take, takeUntil } from 'rxjs/operators';
   styleUrls: ['./question.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class QuestionComponent extends DestroyableComponent implements OnInit, OnChanges {
+export class QuestionComponent extends DestroyableComponent implements OnInit {
   @Input() category: ICategory;
-  question: IQuestion;
-  selectedLanguage$: Observable<Language>;
-  defaultLanguage: Language = DEFAULT_LANGUAGE;
+  question$: Subject<IQuestion> = new Subject<IQuestion>();
 
-  constructor(
-    private questionService: QuestionService,
-    private languageService: LanguageService,
-    private changeDetectorRef: ChangeDetectorRef,
-  ) {
+  constructor(private timerService: TimerService) {
     super();
   }
 
-  private getNewQuestion(): void {
-    this.questionService
-      .fetchQuestion()
-      .pipe(takeUntil(this.componentDestroyed$), take(1))
-      .subscribe((question: IQuestion) => {
-        this.question = question;
-        this.changeDetectorRef.detectChanges();
+  private subscribeToDb(): void {
+    DB.collection('current-question')
+      .onSnapshot((data) => {
+        data.forEach((item) => {
+          // console.log('Current data: ', item.data());
+          this.question$.next(item.data() as IQuestion);
+          this.timerService.reset();
+        });
       });
   }
 
   ngOnInit(): void {
-    this.selectedLanguage$ = this.languageService.lang$
-      .asObservable()
-      .pipe(takeUntil(this.componentDestroyed$));
-
-    this.questionService.getNewQuestion$
-      .pipe(takeUntil(this.componentDestroyed$))
-      .subscribe(() => this.getNewQuestion());
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes.category && changes.category.currentValue) {
-      this.getNewQuestion();
-    }
+    this.subscribeToDb();
   }
 }

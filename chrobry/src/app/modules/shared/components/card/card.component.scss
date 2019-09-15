@@ -3,7 +3,7 @@
 :host {
   ::ng-deep {
     .card {
-      @include breakpoint($mobile) {
+      @include breakpoint($non-desktop) {
         height: auto;
         margin: -1px -20px 0;
         background: linear-gradient(to bottom, var(--color-brand) 50%, var(--color-bg) 50%);
@@ -15,12 +15,10 @@
         background: var(--color-bg);
         border-radius: 5px;
         overflow: hidden;
-
-        @include breakpoint($mobile) {
-          box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
-        }
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
 
         @include breakpoint($desktop) {
+          box-shadow: none;
           border: solid 1px #cccccc;
         }
       }
@@ -40,14 +38,18 @@
       &-title {
         display: flex;
         align-items: center;
+        justify-content: center;
         color: var(--color-primary);
         text-align: center;
         font-size: 3rem;
 
+        .icon {
+          margin-right: 10px;
+        }
+
         &-description {
           display: flex;
           flex-direction: column;
-          flex-grow: 1;
           text-shadow: 0 0 10px #fff;
         }
 

@@ -1,14 +1,15 @@
-<div [@fadeInOut]="loaded ? 'in' : 'out'" class="answer-selector" *ngIf="question" [class.has-selected]="selectedAnswerId">
+<div class="answer-selector" *ngIf="question" [class.has-selected]="selectedAnswerId">
   <button
     type="button"
     class="button button-selector"
     *ngFor="let answer of question.answers; let index = index"
+    [@listAnimation]
     [disabled]="disableButtons"
     [ngClass]="{
-        'selected': answer.id === selectedAnswerId,
-        'success': answer.id === answerInfo?.answerId
+        'selected': index === selectedAnswerId,
+        'success': index === 6
       }"
-    (click)="selectAnswer(answer)">
-    <span class="letter">{{numbering[index]}}</span>{{answer.label[selectedLanguage] || answer.label[defaultLanguage]}}
+    (click)="selectAnswer(index)">
+    <span class="letter">{{numbering[index]}}</span>{{answer}}
   </button>
 </div>

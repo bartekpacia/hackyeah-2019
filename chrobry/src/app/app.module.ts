@@ -7,9 +7,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+import * as firebase from 'firebase';
+
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
+import { firebaseConfig } from '@app/config/firebase';
 import { DEFAULT_LANGUAGE, Language } from '@app/config/global';
 import { AuthGuard } from '@app/guards/auth.guard';
 import { LoaderInterceptor } from '@app/interceptors/loader.interceptor';
@@ -23,6 +26,10 @@ import { MainLayoutComponent } from './layouts/main/main-layout.component';
 
 registerLocaleData(localePl, Language.Polish);
 registerLocaleData(localeEn, Language.English);
+
+firebase.initializeApp(firebaseConfig);
+
+export const DB: firebase.firestore.Firestore = firebase.firestore();
 
 @NgModule({
   declarations: [AppComponent, MainLayoutComponent],

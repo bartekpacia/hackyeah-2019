@@ -23,6 +23,7 @@ export class QuizComponent extends DestroyableComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.categories$ = this.categoryService
       .fetchCategories()
       .pipe(takeUntil(this.componentDestroyed$));
