@@ -10,7 +10,7 @@ exports.refresh = functions.https.onRequest(async (request, response) => {
 
   const randomFact = facts[Math.floor(Math.random() * facts.length)]; // Pick a random fact
   let fact = randomFact.data();
-  fact.questionId = randomFact.id();
+  fact.questionId = randomFact.id;
 
   // Delete the correct answer from the current question, so it's NOT visible on the client side
   delete fact.acceptedAnswerId;
