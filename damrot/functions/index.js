@@ -23,3 +23,15 @@ exports.refresh = functions.https.onRequest(async (request, response) => {
 
   response.json(fact);
 });
+
+exports.info = functions.firestore
+  .document("QUESTIONS/{questionId}")
+  .onUpdate((change, context) => {
+    if (change.after.data().successRate < 0.1) {
+      console.warn(`${change.after.id} has successRate below 0.1`);
+    } else {
+      console.log(`${change.after.id} has successRate above 0.1. And works!`);
+    }
+
+    return null;
+  });
