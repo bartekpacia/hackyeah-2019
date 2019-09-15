@@ -43,11 +43,6 @@ const routes: Routes = [
           .then(module => module.RankingModule),
       },
       {
-        path: RoutingAppPages.Progress,
-        loadChildren: () => import(`@app/modules/progress/progress.module`)
-          .then(module => module.ProgressModule),
-      },
-      {
         path: RoutingAppPages.Shop,
         loadChildren: () => import(`@app/modules/shop/shop.module`)
           .then(module => module.ShopModule),

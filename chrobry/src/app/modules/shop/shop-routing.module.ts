@@ -1,5 +1,5 @@
 import { RoutingShopPages } from '@app/config/routing';
-import { ShopComponent } from './shop.component';
+import { ShopComponent } from './containers/shop/shop.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 

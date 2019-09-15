@@ -1,25 +1,44 @@
 <div class="container" *ngIf="user">
+  <aside class="aside">
     <app-card
-      icon="trophy"
+      icon="award"
       label="Train conductor"
-      sublabel="Level 25"
+      [sublabel]="'Level ' + user?.currentUser?.level || 0"
       progressInfo="1455 / 2045"
       progress="45">
         <div class="card-footer">
             <div class="card-footer-item">
-                PKPoints
-                <span class="card-footer-item-result">{{user.pkpoints || 0}} <app-currency-icon size="25"></app-currency-icon></span>
+              <app-currency-icon size="25" [noMargin]="true"></app-currency-icon>
+              <span class="card-footer-item-result">{{user?.currentUser?.pkpPoints || 0}}</span>
             </div>
-            <div class="card-footer-item">
-                Trophies
-                <span class="card-footer-item-result">12</span>
+            <div class="card-footer-item" title="Trophies">
+              <fa-icon class="icon icon-brown" icon="trophy"></fa-icon>
+              <span class="card-footer-item-result">5 / 124</span>
             </div>
-            <div class="card-footer-item">
-                Ranking
-                <span class="card-footer-item-result">#10</span>
+            <div class="card-footer-item" title="ranking">
+              <fa-icon class="icon icon-blue" icon="crown"></fa-icon>
+              <span class="card-footer-item-result"># 10</span>
             </div>
         </div>
-    </app-card>
+      </app-card>
+      <div class="trophies">
+        <button type="button" class="button trophies-badge" (click)="navigateToBadges()">
+          <img class="trophies-icon" src="/assets/images/badges/60.png" alt="Trophy">
+        </button>
+        <button type="button" class="button trophies-badge" (click)="navigateToBadges()">
+          <img class="trophies-icon" src="/assets/images/badges/70.png" alt="Trophy">
+        </button>
+        <button type="button" class="button trophies-badge" (click)="navigateToBadges()">
+          <img class="trophies-icon" src="/assets/images/badges/100.png" alt="Trophy">
+        </button>
+        <button type="button" class="button trophies-badge" (click)="navigateToBadges()">
+          <img class="trophies-icon" src="/assets/images/badges/10.png" alt="Trophy">
+        </button>
+        <button type="button" class="button trophies-badge" (click)="navigateToBadges()">
+          <img class="trophies-icon" src="/assets/images/badges/90.png" alt="Trophy">
+        </button>
+      </div>
+    </aside>
     <main role="main" class="main">
         <section class="dashboard-selector">
             <app-dashboard-button [pathTo]="RoutingAppPages.Games">

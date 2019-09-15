@@ -12,3 +12,28 @@
     justify-content: space-between;
   }
 }
+
+.trophies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  .button {
+    height: 100%;
+    padding: 0 10px;
+    transition: all .2s ease;
+
+    :hover {
+      transform: scale(0.95);
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      width: auto;
+    }
+  }
+}

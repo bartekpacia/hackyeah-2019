@@ -92,6 +92,19 @@
         width: 0;
       }
     }
+
+    &:not(.show) {
+      .notification-icon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        display: block;
+        width: 15px;
+        height: 15px;
+        background: var(--color-primary);
+        border-radius: 50%;
+      }
+    }
   }
 }
 

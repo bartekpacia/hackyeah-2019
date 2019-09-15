@@ -1,9 +1,27 @@
 <div class="container">
-  <app-card
-    icon="trophy"
-    label="Trophies">
-    <div class="card-footer"></div>
-  </app-card>
+  <aside class="aside">
+    <app-card
+      icon="trophy"
+      label="Trophies"
+      sublabel="Level 25 - Train Conductor"
+      progress="45"
+      progressInfo="1455 / 2045">
+      <div class="card-footer">
+        <div class="card-footer-item">
+          <span class="sr-only">Trophies</span>
+          <fa-icon class="icon icon-brown" icon="trophy"></fa-icon> <span class="card-footer-item-result">5 / 124</span>
+        </div>
+        <div class="card-footer-item">
+          <span class="sr-only">Travelled with IC</span>
+          <fa-icon class="icon icon-blue" icon="train"></fa-icon> <span class="card-footer-item-result">640 km</span>
+        </div>
+        <div class="card-footer-item">
+          <span class="sr-only">Emissions (CO2e)</span>
+          <fa-icon class="icon icon-green" icon="leaf"></fa-icon> <span class="card-footer-item-result">-30,34 kg</span>
+        </div>
+      </div>
+    </app-card>
+  </aside>
   <main
     role="main"
     class="main">
@@ -16,8 +34,9 @@
             src="/assets/images/badges/60.png">
         </div>
         <div class="trophies--description">
-          some fancy dectription
-          <app-progressbar progress="25"></app-progressbar>
+          <h2>Trophy Collector</h2>
+          Collected many trophies
+          <app-progressbar progress="50" info="5 / 10"></app-progressbar>
         </div>
       </li>
       <li>
@@ -27,19 +46,21 @@
             src="/assets/images/badges/70.png">
         </div>
         <div class="trophies--description">
-          some fancy dectription
-          <app-progressbar progress="85"></app-progressbar>
+          <h2>Trainspotter</h2>
+          Travelled plenty with IC trains
+          <app-progressbar progress="64" info="640km / 1000km"></app-progressbar>
         </div>
       </li>
       <li>
         <div class="trophies--badge">
           <img
             class="trophies--icon"
-            src="/assets/images/badges/80.png">
+            src="/assets/images/badges/100.png">
         </div>
         <div class="trophies--description">
-          some fancy dectription
-          <app-progressbar progress="35"></app-progressbar>
+          <h2>Captain Planet</h2>
+          Carbon emissions have been reduced
+          <app-progressbar progress="35" info="-30,34kg / -100,00kg CO2e"></app-progressbar>
         </div>
       </li>
       <li>
@@ -49,19 +70,21 @@
             src="/assets/images/badges/10.png">
         </div>
         <div class="trophies--description">
-          some fancy dectription
-          <app-progressbar progress="75"></app-progressbar>
+          <h2>Quiz Master</h2>
+          Answered tonnes of questions
+          <app-progressbar progress="50" info="125 / 250"></app-progressbar>
         </div>
       </li>
       <li>
         <div class="trophies--badge">
           <img
             class="trophies--icon"
-            src="/assets/images/badges/20.png">
+            src="/assets/images/badges/90.png">
         </div>
         <div class="trophies--description">
-          some fancy dectription
-          <app-progressbar progress="95"></app-progressbar>
+          <h2>Wars Star</h2>
+          Bought goodies at the bar
+          <app-progressbar progress="80" info="4 / 5"></app-progressbar>
         </div>
       </li>
     </ul>

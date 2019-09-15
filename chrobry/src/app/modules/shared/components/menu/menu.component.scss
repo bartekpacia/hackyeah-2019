@@ -1,5 +1,48 @@
 @import 'abstracts/mixins';
 
+$line-size: 5rem;
+
+.user--info {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+
+  &-fullname {
+    font-weight: 600;
+  }
+
+  &-description {
+    font-size: 0.9rem;
+    color: grey;
+  }
+
+  &-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.badge {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  // margin: 0 1rem 0 0;
+  width: $line-size;
+  height: $line-size;
+  border-radius: $line-size;
+  // line-height: 2.8rem;
+  text-align: center;
+}
+
 .menu {
   position: fixed;
   display: flex;
@@ -45,7 +88,21 @@
 
       &-tertiary {
         text-align: left;
-        color: var(--color-primary);
+        // color: var(--color-primary);
+      }
+
+      &-has-action {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          display: block;
+          width: 15px;
+          height: 15px;
+          background: var(--color-primary);
+          border-radius: 50%;
+        }
       }
     }
   }
@@ -65,7 +122,7 @@
   cursor: pointer;
 
   &.show {
-    opacity: .9;
+    opacity: 0.9;
     transform: translateX(0);
   }
 }

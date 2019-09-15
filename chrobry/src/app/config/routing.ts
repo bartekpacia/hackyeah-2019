@@ -7,7 +7,6 @@ export enum RoutingAppPages {
   Dashboard = 'dashboard',
   Games = 'games',
   Qr = 'qr',
-  Progress = 'progress',
   Ranking = 'ranking',
   Shop = 'shop',
   Trophies = 'trophies'
@@ -16,6 +15,11 @@ export enum RoutingAppPages {
 export enum RoutingGamesPages {
   Home = '',
   Quiz = 'quiz',
+  DidYouKNow = 'did-you-know'
+}
+
+export enum RoutingDidYouKnowPages {
+  Home = '',
 }
 
 export enum RoutingQuizPages {

@@ -7,7 +7,8 @@
     <img src="assets/images/pkp-ic-logo.svg" alt="PKP Intercity">
   </a>
   <nav class="header-navigation" role="navigation">
-    <button type="button" class="button header-menu-button" [class.show]="showMenu$ | async" (click)="toggleMenu()">
+    <button type="button" class="button header-menu-button has-notification" [class.show]="showMenu$ | async" (click)="toggleMenu()">
+      <i class="notification-icon"></i>
       <span><i class="sr-only">Menu</i></span>
     </button>
   </nav>

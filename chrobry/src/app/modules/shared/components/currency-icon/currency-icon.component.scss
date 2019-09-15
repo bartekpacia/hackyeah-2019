@@ -13,7 +13,11 @@ $point-size: 90%;
   margin-left: 5px;
   font-size: 1.2rem !important;
 
-  &.no-margin {
-    margin: 0;
+  &-container {
+    &.no-margin {
+      .icon {
+        margin: 0;
+      }
+    }
   }
 }

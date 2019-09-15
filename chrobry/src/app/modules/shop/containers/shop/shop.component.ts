@@ -1,5 +1,7 @@
 import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { listAnimation } from '@app/animations/list.animation';
+import { UserService } from '@app/modules/shared/services/user.service';
+import { IUser } from '@app/interfaces/user.interface';
 
 @Component({
   selector: 'app-shop',
@@ -10,10 +12,15 @@ import { listAnimation } from '@app/animations/list.animation';
 })
 export class ShopComponent implements OnInit {
 
+  user: IUser;
 
   itemList = [];
 
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private userService: UserService
+  ) {
+    this.user = this.userService.user;
   }
   ngOnInit(): void {
 

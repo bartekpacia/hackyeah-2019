@@ -1,7 +1,14 @@
 <section class="menu" role="navigation" [class.show]="showMenu$ | async">
-  <div class="user-info" *ngIf="user">
-    <h1>{{user.firstName}} {{user.surName}} ({{user.userName}})</h1>
-    <h2>PKPoints: {{user.pkpoints}}</h2>
+  <div class="user--info" *ngIf="user">
+    <div class="user--info-box">
+      <div class="user--info-fullname">{{user?.currentUser?.firstName}} {{user?.currentUser?.lastName}} </div>
+      <div>({{user?.currentUser?.email}})</div>
+      <div class="user--info-description">PKPoints: {{user?.currentUser?.pkpPoints}}</div>
+    </div>
+    <div class="badge">
+      <img class="user--info-icon" src="/assets/images/avatars/avatar_men3.png">
+    </div>
+
   </div>
   <nav class="menu-nav" role="navigation">
     <ul>
@@ -18,13 +25,13 @@
         </button>
       </li>
       <li>
-        <button type="button" class="button button-tertiary" (click)="navigateTo(RoutingAppPages.Dashboard)">
-          <fa-icon icon="store-alt"></fa-icon>
+        <button type="button" class="button button-tertiary button-has-action" (click)="navigateTo(RoutingAppPages.Shop)">
+          <fa-icon icon="shopping-basket"></fa-icon>
           Shop
         </button>
       </li>
       <li>
-        <button type="button" class="button button-tertiary" (click)="navigateTo(RoutingAppPages.Progress)">
+        <button type="button" class="button button-tertiary" (click)="navigateTo(RoutingAppPages.Trophies)">
           <fa-icon icon="trophy"></fa-icon>
           Trophies
         </button>

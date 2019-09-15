@@ -15,6 +15,11 @@ const routes: Routes = [
     loadChildren: () => import(`@app/modules/games/modules/quiz/quiz.module`)
       .then(module => module.QuizModule),
   },
+  {
+    path: RoutingGamesPages.DidYouKNow,
+    loadChildren: () => import(`@app/modules/games/modules/did-you-know/did-you-know.module`)
+      .then(module => module.DidYouKnowModule),
+  },
 ];
 
 @NgModule({

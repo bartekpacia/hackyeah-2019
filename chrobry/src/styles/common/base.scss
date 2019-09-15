@@ -58,11 +58,9 @@ main {
 }
 
 aside {
-  height: 100%;
-  padding: 10px 0;
-
   @include breakpoint($desktop) {
     padding: 20px;
+    min-width: 400px;
 
     & ~ main {
       width: 70%;
