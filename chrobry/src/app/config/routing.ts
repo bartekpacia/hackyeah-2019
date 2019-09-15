@@ -9,7 +9,8 @@ export enum RoutingAppPages {
   Qr = 'qr',
   Progress = 'progress',
   Ranking = 'ranking',
-  Shop = 'shop'
+  Shop = 'shop',
+  Trophies = 'trophies'
 }
 
 export enum RoutingGamesPages {
@@ -35,6 +36,11 @@ export enum RoutingRankingPages {
 export enum RoutingTicketsPages {
   Home = '',
 }
+
+export enum RoutingTrophiesPages {
+  Home = '',
+}
+
 
 export enum RoutingShopPages {
   Home = '',

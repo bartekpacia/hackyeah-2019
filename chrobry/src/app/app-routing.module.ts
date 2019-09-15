@@ -52,6 +52,11 @@ const routes: Routes = [
         loadChildren: () => import(`@app/modules/shop/shop.module`)
           .then(module => module.ShopModule),
       },
+      {
+        path: RoutingAppPages.Trophies,
+        loadChildren: () => import(`@app/modules/trophies/trophies.module`)
+          .then(module => module.TrophiesModule),
+      },
     ],
   }
 ];
