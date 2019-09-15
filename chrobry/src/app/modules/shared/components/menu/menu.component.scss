@@ -1,5 +1,27 @@
 @import 'abstracts/mixins';
 
+$line-size: 4rem;
+
+.user--info {
+  display: flex;
+  flex-direction: row wrap;
+  margin-top: 1rem;
+  font-size: 0.6rem;
+}
+
+.badge {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 1rem 0 0;
+  width: $line-size;
+  height: $line-size;
+  border-radius: $line-size;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  text-align: center;
+}
+
 .menu {
   position: fixed;
   display: flex;
@@ -79,7 +101,7 @@
   cursor: pointer;
 
   &.show {
-    opacity: .9;
+    opacity: 0.9;
     transform: translateX(0);
   }
 }
