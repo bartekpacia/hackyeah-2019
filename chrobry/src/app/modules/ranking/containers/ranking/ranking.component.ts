@@ -17,7 +17,7 @@ export class RankingComponent implements OnInit {
     poland: [
       {
         title: 'Name Surname',
-        icon: 'avatar_men',
+        icon: 'avatar_men2',
       },
       {
         title: 'Name Surname',
@@ -51,11 +51,11 @@ export class RankingComponent implements OnInit {
     mazowieckie: [
       {
         title: 'Name Surname',
-        icon: 'avatar_men',
+        icon: 'avatar_women',
       },
       {
         title: 'Name Surname',
-        icon: 'avatar_men',
+        icon: 'avatar_women2',
       },
       {
         title: 'Name Surname',
