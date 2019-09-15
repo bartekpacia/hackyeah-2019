@@ -1,0 +1,54 @@
+// VARIABLES
+$line-size: 6rem;
+
+li {
+  padding: 1rem 0;
+  border-bottom: 2px dashed orange;
+  // line-height: $line-size;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+}
+
+.trophies {
+
+  &--list {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &--badge {
+    position: relative;
+    display: inline-block;
+    // overflow: hidden;
+    margin: 0 1rem 0 0;
+    width: $line-size;
+    height: $line-size;
+    border-radius: $line-size;
+  }
+
+  &--icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    flex: 1;
+  }
+
+  &--description > * {
+    margin: 0.3rem 0 ;
+  }
+}

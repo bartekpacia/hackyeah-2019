@@ -1,19 +1,10 @@
 <div class="container" *ngIf="user">
-    <app-card>
-        <div class="card-body">
-            <h1 class="card-title">
-                <fa-icon
-                    icon="trophy"
-                    class="icon"></fa-icon>
-              <span class="card-title-description">
-                <span class="card-title-label">Train conductor</span>
-                <span class="card-title-number">Level 25</span>
-              </span>
-            </h1>
-            <div class="progress">
-                <div class="progress-bar"></div>
-            </div>
-        </div>
+    <app-card
+      icon="trophy"
+      label="Train conductor"
+      sublabel="Level 25"
+      progressInfo="1455 / 2045"
+      progress="45">
         <div class="card-footer">
             <div class="card-footer-item">
                 PKPoints
@@ -31,24 +22,24 @@
     </app-card>
     <main role="main" class="main">
         <section class="dashboard-selector">
-            <app-dashboard-button [pathTo]="RoutingAppPages.Quiz">
+            <app-dashboard-button [pathTo]="RoutingAppPages.Games">
                 <fa-icon
                     class="icon"
                     icon="gamepad"></fa-icon>
-                Game
+                Games
             </app-dashboard-button>
-            <app-dashboard-button [pathTo]="RoutingAppPages.Dashboard">
+            <app-dashboard-button [pathTo]="RoutingAppPages.Shop">
                 <app-currency-icon size="40"></app-currency-icon>
                 Shop
             </app-dashboard-button>
-            <app-dashboard-button [pathTo]="RoutingAppPages.Progress">
+            <app-dashboard-button [pathTo]="RoutingAppPages.Trophies">
                 <fa-icon
                     class="icon"
                     icon="trophy">
                 </fa-icon>
                 Your trophies
             </app-dashboard-button>
-            <app-dashboard-button [pathTo]="RoutingAppPages.Progress">
+            <app-dashboard-button [pathTo]="RoutingAppPages.Ranking">
               <fa-icon
                 class="icon"
                 icon="crown">

@@ -1,0 +1,31 @@
+<div class="container">
+  <app-card
+    icon="shopping-basket"
+    label="Shop">
+    <div class="card-footer"></div>
+  </app-card>
+  <main
+    role="main"
+    class="main">
+    <img
+      class="image--icon logo--icon"
+      alt="dupa"
+      src="/assets/images/wars_logo.png">
+    <div
+      class="container--footer"
+      [@listAnimation]="itemList.length">
+      <div
+        *ngFor="let item of itemList"
+        class="container--footer-item">
+        <div class="container--footer-box">
+
+          <img
+            class="image--icon"
+            [src]="'/assets/images/'+ item.image +'.png'">
+          <p>{{item.label}}</p>
+          <p class="font--bolded">{{item.points}}pkt</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

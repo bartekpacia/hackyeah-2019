@@ -1,0 +1,26 @@
+<div class="container">
+  <app-card icon="crown" label="Ranking">
+    <div class="card-footer">
+      <div class="card-footer-item">
+        Poland
+        <span class="card-footer-item-result">#123</span>
+      </div>
+      <div class="card-footer-item">
+        Mazowieckie
+        <span class="card-footer-item-result">#54</span>
+      </div>
+      <div class="card-footer-item">
+        Warsaw
+        <span class="card-footer-item-result">#12</span>
+      </div>
+    </div>
+  </app-card>
+  <main role="main" class="main">
+    <app-button-group>
+      <button type="button" class="button" [class.active]="region === 'poland'" (click)="selectRegion('poland')">Poland</button>
+      <button type="button" class="button" [class.active]="region === 'mazowieckie'" (click)="selectRegion('mazowieckie')">Mazowieckie</button>
+      <button type="button" class="button" [class.active]="region === 'warsaw'" (click)="selectRegion('warsaw')">Warsaw</button>
+    </app-button-group>
+    <app-ranking-list [regionList]="currentRegionList"></app-ranking-list>
+  </main>
+</div>

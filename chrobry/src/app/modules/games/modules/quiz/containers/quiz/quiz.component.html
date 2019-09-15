@@ -1,0 +1,8 @@
+<div class="container">
+  <main role="main" class="main">
+    <app-question [difficulty]="difficulty" *ngIf="selectedDifficulty$ | async as difficulty; else selectDifficulty"></app-question>
+    <ng-template #selectDifficulty>
+      <app-difficulty></app-difficulty>
+    </ng-template>
+  </main>
+</div>

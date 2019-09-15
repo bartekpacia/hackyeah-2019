@@ -8,6 +8,7 @@ import { SharedModule } from '@app/modules/shared/shared.module';
 import { ProgressRoutingModule } from './progress-routing.module';
 import { ProgressComponent } from './containers/progress/progress.component';
 import { RankingComponent } from './components/ranking/ranking.component';
+import { FormModule } from '@app/modules/form/form.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RankingComponent } from './components/ranking/ranking.component';
     CommonModule,
     ProgressRoutingModule,
     FontAwesomeModule,
-    SharedModule
+    SharedModule,
+    FormModule
   ]
 })
 export class ProgressModule { }

@@ -2,6 +2,7 @@
 
 <app-snackbar></app-snackbar>
 
-<router-outlet></router-outlet>
-
+<div class="outlet-container" [@routeAnimations]="outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
 <app-footer></app-footer>

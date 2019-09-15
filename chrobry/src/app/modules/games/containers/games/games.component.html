@@ -1,0 +1,28 @@
+<div class="container">
+  <app-card icon="gamepad" label="Games">
+    <div class="card-footer">
+      <div class="card-footer-item">
+        Plays
+        <span class="card-footer-item-result">125</span>
+      </div>
+      <div class="card-footer-item">
+        Achievements
+        <span class="card-footer-item-result">124</span>
+      </div>
+      <div class="card-footer-item">
+        Favourite
+        <span class="card-footer-item-result">Quiz</span>
+      </div>
+    </div>
+  </app-card>
+  <main role="main" class="main">
+    <section class="dashboard-selector">
+      <app-dashboard-button [pathTo]="RoutingGamesPages.Quiz" [relative]="true">
+        <fa-icon
+          class="icon"
+          icon="question-circle"></fa-icon>
+        Quiz
+      </app-dashboard-button>
+    </section>
+  </main>
+</div>

@@ -1,9 +1,0 @@
-<div class="counter" *ngIf="counter$ | async as counter">
-  <span class="counter-step"
-        [class.finished]="counter.count > index + 1"
-        [class.current]="counter.count === index + 1"
-        *ngFor="let number of (counter.maxCount | fillArray); let index = index">{{index + 1}}</span>
-  <div class="counter-progress">
-    <span class="counter-progress-bar" [style.width.%]="progress$ | async"></span>
-  </div>
-</div>
