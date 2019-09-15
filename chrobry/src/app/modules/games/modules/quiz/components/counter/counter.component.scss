@@ -54,5 +54,7 @@ $step-size: 15px;
   &-icon {
     position: absolute;
     font-size: 12px;
+    padding: 0 2px;
+    background: rgba(0, 0, 0, 0.6);
   }
 }
