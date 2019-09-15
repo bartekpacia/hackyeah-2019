@@ -3,13 +3,13 @@
     <app-card
       icon="award"
       label="Train conductor"
-      sublabel="Level 25"
+      [sublabel]="'Level ' + user?.currentUser?.level || 0"
       progressInfo="1455 / 2045"
       progress="45">
         <div class="card-footer">
             <div class="card-footer-item">
               <app-currency-icon size="25" [noMargin]="true"></app-currency-icon>
-              <span class="card-footer-item-result">{{user.pkpoints || 0}}</span>
+              <span class="card-footer-item-result">{{user.currentUser.pkpPoints || 0}}</span>
             </div>
             <div class="card-footer-item" title="Trophies">
               <fa-icon class="icon icon-brown" icon="trophy"></fa-icon>

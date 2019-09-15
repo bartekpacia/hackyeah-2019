@@ -1,7 +1,7 @@
 <section class="menu" role="navigation" [class.show]="showMenu$ | async">
   <div class="user-info" *ngIf="user">
-    <h1>{{user.firstName}} {{user.surName}} ({{user.userName}})</h1>
-    <h2>PKPoints: {{user.pkpoints}}</h2>
+    <h1>{{user.currentUser.firstName}} {{user.currentUser.lastName}} ({{user.currentUser.email}})</h1>
+    <h2>PKPoints: {{user.currentUser.pkpPoints}}</h2>
   </div>
   <nav class="menu-nav" role="navigation">
     <ul>
