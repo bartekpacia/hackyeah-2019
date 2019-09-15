@@ -106,4 +106,16 @@ export default function (app: Application) {
     }
     return res.status(200).send({ status: "OK", currentUser })
   })
+
+  app.get("/did-you-know", async (req: Request, res: Response, next: NextFunction) => {
+    const factsRef = firebase.DB.collection('FACTS')
+
+    const factsQuery = await factsRef.get();
+    const facts = factsQuery.docs;
+
+    const randomFact = facts[Math.floor(Math.random() * facts.length)]; // Pick a random fact
+    let fact = randomFact.data();
+
+      return res.status(200).send({ status: "OK", fact })
+  })
 }
