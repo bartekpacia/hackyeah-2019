@@ -24,6 +24,11 @@
   .button {
     height: 100%;
     padding: 0 10px;
+    transition: all .2s ease;
+
+    :hover {
+      transform: scale(0.95);
+    }
 
     img {
       display: block;

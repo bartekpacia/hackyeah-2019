@@ -1,0 +1,14 @@
+<ng-container *ngIf="question?.fact">
+  <div class="modal-body">
+    <img [src]="question.fact.imageUrl" [alt]="question.fact.imageUrl" width="100%" />
+    <h2 class="modal-answer">
+      <span class="modal-answer-text">{{question.fact.body}}</span>
+      <span class="modal-answer-icon"></span>
+    </h2>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="button button-primary" (click)="next()">
+      Next question
+    </button>
+  </div>
+</ng-container>
