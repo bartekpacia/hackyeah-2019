@@ -27,10 +27,13 @@ exports.refresh = functions.https.onRequest(async (request, response) => {
 exports.info = functions.firestore
   .document("QUESTIONS/{questionId}")
   .onUpdate((change, context) => {
-    if (change.after.data().successRate < 0.1) {
-      console.warn(`${change.after.id} has successRate below 0.1`);
+    console.log(change.after.data());
+
+    // IMPORTANT: There's a typ in the Firestore "succes" - leave this as it is
+    if (change.after.data().succesRate < 0.1) {
+      console.warn(`${change.after.id} has succesRate below 0.1`);
     } else {
-      console.log(`${change.after.id} has successRate above 0.1. And works!`);
+      console.log(`${change.after.id} has succesRate above 0.1. And works!`);
     }
 
     return null;
