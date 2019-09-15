@@ -18,7 +18,10 @@ exports.refresh = functions.https.onRequest(async (request, response) => {
   await db
     .collection("current-question")
     .doc("current-question")
-    .set(fact);
+    .set({
+      ...fact,
+      questionId: randomFact.id()
+    });
 
   response.json(fact);
 });

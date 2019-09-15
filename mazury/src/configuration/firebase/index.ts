@@ -1,11 +1,8 @@
 const admin = require('firebase-admin');
-const CREDENTIALS = require('./credentials.json');
+//const CREDENTIALS = require('./credentials.json');
 
 
-admin.initializeApp({
-  credential: admin.credential.cert(CREDENTIALS),
-  databaseURL: "https://hackyeah-2019.firebaseio.com"
-});
+admin.initializeApp();
 
 const DB = admin.firestore();
 const AUTH = admin.auth();
