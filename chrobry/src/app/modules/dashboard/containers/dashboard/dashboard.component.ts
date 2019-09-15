@@ -4,6 +4,7 @@ import { IUser } from '@app/interfaces/user.interface';
 import { RoutingAppPages } from '@app/config/routing';
 import { UserService } from '@app/modules/shared/services/user.service';
 import { Router } from '@angular/router';
+import { DB } from '@app/app.module';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,6 +19,16 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.userService.user;
+
+    DB.collection('USERS')
+      .onSnapshot((data) => {
+        data.forEach((item) => {
+          if (this.userService.user.currentUser.email === item.data().email) {
+            this.userService.user.currentUser = (item.data() as any);
+          }
+        });
+      });
+
   }
 
   navigateToBadges(): void {
