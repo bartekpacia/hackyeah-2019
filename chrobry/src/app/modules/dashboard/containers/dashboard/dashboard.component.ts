@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { IUser } from '@app/interfaces/user.interface';
 import { RoutingAppPages } from '@app/config/routing';
@@ -9,14 +9,13 @@ import { UserService } from '@app/modules/shared/services/user.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
   user: IUser;
   RoutingAppPages: typeof RoutingAppPages = RoutingAppPages;
 
-  constructor(private userService: UserService) { }
-
-  ngOnInit(): void {
+  constructor(private userService: UserService) {
     this.user = this.userService.user;
   }
+
 
 }
